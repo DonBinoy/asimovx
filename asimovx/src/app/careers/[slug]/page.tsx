@@ -24,7 +24,7 @@ export default function JobDetails({ params }: { params: Promise<{ slug: string 
     }
 
     return (
-        <main className="min-h-screen bg-black text-foreground selection:bg-accent selection:text-background">
+        <main className="min-h-screen bg-background text-foreground selection:bg-accent selection:text-background">
             <Navbar />
             <ApplicationForm
                 isOpen={isApplicationOpen}
@@ -57,7 +57,7 @@ export default function JobDetails({ params }: { params: Promise<{ slug: string 
                             <span className="text-xs font-bold tracking-[0.3em] uppercase text-accent mb-4 block">
                                 {job.type} Position
                             </span>
-                            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-white">
+                            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-foreground">
                                 {job.title}
                             </h1>
                             <div className="flex flex-wrap gap-6 text-sm text-slate-400 font-mono mb-8">
@@ -162,7 +162,7 @@ export default function JobDetails({ params }: { params: Promise<{ slug: string 
 
                     {/* Sidebar */}
                     <div className="md:col-span-1">
-                        <div className="bg-white/5 border border-white/10 rounded-3xl p-8 sticky top-32">
+                        <div className="bg-card border border-border rounded-3xl p-8 sticky top-32">
                             <h3 className="text-xl font-bold mb-6">Share this role</h3>
                             <div className="flex gap-4 mb-8">
                                 <button className="p-3 bg-white/10 rounded-full hover:bg-accent transition-colors">

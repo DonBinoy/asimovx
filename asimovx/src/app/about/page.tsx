@@ -35,7 +35,7 @@ const TEAM = [
 
 export default function About() {
     return (
-        <main className="min-h-screen bg-black text-foreground selection:bg-accent selection:text-background">
+        <main className="min-h-screen bg-background text-foreground selection:bg-accent selection:text-background">
             <Navbar />
 
             {/* Hero Section */}

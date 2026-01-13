@@ -23,7 +23,7 @@ export default function Careers() {
     });
 
     return (
-        <main className="min-h-screen bg-black text-foreground selection:bg-accent selection:text-background" >
+        <main className="min-h-screen bg-background text-foreground selection:bg-accent selection:text-background" >
             <Navbar />
 
             <section className="pt-44 pb-20 px-6 md:px-24 max-w-7xl mx-auto">
@@ -39,7 +39,7 @@ export default function Careers() {
                     <h1 className="text-5xl md:text-8xl font-bold tracking-tighter leading-none mb-8">
                         {t('careers.title').split(" ")[0]} <br /> <span className="accent-gradient italic">{t('careers.title').split(" ").slice(1).join(" ")}</span>
                     </h1>
-                    <p className="text-xl text-slate-400 font-light max-w-2xl mb-12">
+                    <p className="text-xl text-slate-500 dark:text-slate-400 font-light max-w-2xl mb-12">
                         {t('careers.description')}
                     </p>
 
@@ -52,7 +52,7 @@ export default function Careers() {
                                 placeholder="Search roles..."
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
-                                className="w-full bg-white/5 border border-white/10 rounded-full py-4 pl-12 pr-6 text-white placeholder:text-slate-500 focus:outline-none focus:border-accent transition-colors"
+                                className="w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-full py-4 pl-12 pr-6 text-foreground dark:text-white placeholder:text-slate-500 focus:outline-none focus:border-accent transition-colors"
                             />
                         </div>
                         <div className="flex gap-3 overflow-x-auto pb-2 md:pb-0">
@@ -80,7 +80,7 @@ export default function Careers() {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="group relative p-8 bg-white/5 border border-white/10 rounded-2xl hover:border-accent/50 hover:bg-white/10 transition-all duration-300"
+                                className="group relative p-8 bg-card border border-border rounded-2xl hover:border-accent/50 hover:bg-slate-50 dark:hover:bg-white/10 transition-all duration-300"
                             >
                                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-6">
                                     <div>

@@ -23,7 +23,7 @@ const Blog = () => {
     const { t } = useLanguage();
 
     return (
-        <section className="py-44 px-6 md:px-24 bg-black relative">
+        <section className="py-44 px-6 md:px-24 bg-background text-foreground relative">
             <div className="max-w-7xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

@@ -35,7 +35,7 @@ export default function Portfolio() {
     const { t } = useLanguage();
 
     return (
-        <main className="min-h-screen bg-black text-foreground selection:bg-accent selection:text-background">
+        <main className="min-h-screen bg-background text-foreground selection:bg-accent selection:text-background">
             <Navbar />
 
             <section className="pt-44 pb-20 px-6 md:px-24">

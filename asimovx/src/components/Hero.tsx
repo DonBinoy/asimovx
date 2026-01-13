@@ -32,7 +32,7 @@ const Hero = () => {
     const { t } = useLanguage();
 
     return (
-        <section className="relative min-h-[110vh] flex flex-col justify-center px-6 md:px-24 pt-32 overflow-hidden mesh-gradient">
+        <section className="relative min-h-[110vh] flex flex-col justify-center px-6 md:px-24 pt-32 overflow-hidden bg-background mesh-gradient">
             <AISphere />
 
             <motion.div
@@ -57,7 +57,7 @@ const Hero = () => {
 
                 <motion.p
                     variants={itemVariants}
-                    className="text-xl md:text-2xl text-slate-400 mb-16 max-w-3xl font-light leading-relaxed"
+                    className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 mb-16 max-w-3xl font-light leading-relaxed"
                 >
                     {t('hero.description')}
                 </motion.p>
@@ -65,14 +65,14 @@ const Hero = () => {
                 <motion.div variants={itemVariants} className="flex flex-wrap gap-8">
                     <button className="group relative px-10 py-5 overflow-hidden rounded-full transition-all">
                         <span className="absolute inset-0 bg-accent translate-y-[101%] group-hover:translate-y-0 transition-transform duration-500 ease"></span>
-                        <span className="relative z-10 font-bold text-lg text-background group-hover:text-white transition-colors duration-500">
+                        <span className="relative z-10 font-bold text-lg text-foreground dark:text-white group-hover:text-white transition-colors duration-500">
                             {t('hero.cta_primary')}
                         </span>
                         <span className="absolute inset-0 border border-accent rounded-full"></span>
                     </button>
 
                     <button className="flex items-center gap-4 group">
-                        <span className="w-14 h-14 flex items-center justify-center rounded-full border border-white/10 group-hover:border-accent group-hover:bg-accent/10 transition-all duration-500">
+                        <span className="w-14 h-14 flex items-center justify-center rounded-full border border-slate-200 dark:border-white/10 group-hover:border-accent group-hover:bg-accent/10 transition-all duration-500">
                             <svg className="w-5 h-5 group-hover:text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />

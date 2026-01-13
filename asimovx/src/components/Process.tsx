@@ -42,7 +42,7 @@ const Process = () => {
     ];
 
     return (
-        <section className="py-44 px-6 md:px-24 bg-gradient-to-b from-slate-950/50 to-black relative overflow-hidden">
+        <section className="py-44 px-6 md:px-24 bg-background relative overflow-hidden">
             <div className="absolute inset-0 tech-grid opacity-20"></div>
 
             <div className="relative z-10">
@@ -55,7 +55,7 @@ const Process = () => {
                     <span className="text-xs font-bold tracking-[0.3em] uppercase text-accent mb-6 block">
                         {t('process.tagline')}
                     </span>
-                    <h2 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">
+                    <h2 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 text-foreground">
                         {t('process.title').split(" ")[0]} <span className="accent-gradient">{t('process.title').split(" ").slice(1).join(" ")}</span>
                     </h2>
                 </motion.div>
@@ -70,15 +70,15 @@ const Process = () => {
                             className="group relative"
                         >
                             <div className="absolute -inset-0.5 bg-gradient-to-r from-accent to-accent-secondary rounded-2xl opacity-0 group-hover:opacity-100 blur transition duration-500"></div>
-                            <div className="relative p-8 bg-black border border-white/10 rounded-2xl h-full">
+                            <div className="relative p-8 bg-card border border-border rounded-2xl h-full">
                                 <div className="flex items-start gap-4 mb-4">
-                                    <span className="text-4xl font-bold text-white/10">{String(index + 1).padStart(2, '0')}</span>
-                                    <div className="p-3 bg-accent/10 rounded-xl group-hover:bg-accent group-hover:text-background transition-all duration-300">
+                                    <span className="text-4xl font-bold text-slate-200 dark:text-white/10">{String(index + 1).padStart(2, '0')}</span>
+                                    <div className="p-3 bg-accent/10 rounded-xl group-hover:bg-accent group-hover:text-white transition-all duration-300">
                                         {step.icon}
                                     </div>
                                 </div>
-                                <h3 className="text-xl font-bold mb-3">{step.title}</h3>
-                                <p className="text-slate-400 font-light leading-relaxed">{step.description}</p>
+                                <h3 className="text-xl font-bold mb-3 text-foreground">{step.title}</h3>
+                                <p className="text-slate-500 dark:text-slate-400 font-light leading-relaxed">{step.description}</p>
                             </div>
                         </motion.div>
                     ))}

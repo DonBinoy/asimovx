@@ -7,7 +7,7 @@ import BlogComponent from '@/components/Blog';
 
 export default function BlogPage() {
     return (
-        <main className="min-h-screen bg-black text-foreground selection:bg-accent selection:text-background">
+        <main className="min-h-screen bg-background text-foreground selection:bg-accent selection:text-background">
             <Navbar />
 
             {/* 

@@ -49,7 +49,7 @@ export default function Contact() {
     };
 
     return (
-        <main className="min-h-screen bg-black text-foreground selection:bg-accent selection:text-background">
+        <main className="min-h-screen bg-background text-foreground selection:bg-accent selection:text-background">
             <Navbar />
 
             <section className="pt-44 pb-20 px-6 md:px-24 max-w-7xl mx-auto">
@@ -60,10 +60,10 @@ export default function Contact() {
                     className="mb-16"
                 >
                     <span className="text-accent text-sm font-bold tracking-[0.3em] uppercase block mb-4">Contact Us</span>
-                    <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white mb-6">
+                    <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground mb-6">
                         How can we <span className="text-accent">help you?</span>
                     </h1>
-                    <p className="text-xl text-slate-400 font-light max-w-2xl">
+                    <p className="text-xl text-slate-500 dark:text-slate-400 font-light max-w-2xl">
                         Get Free Quotes Now. Use the form below or reach out to our offices directly.
                     </p>
                 </motion.div>

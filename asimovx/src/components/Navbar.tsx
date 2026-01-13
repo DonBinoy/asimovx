@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { Globe } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
+import { ThemeToggle } from './ThemeToggle';
+
 const Navbar = () => {
     const { language, setLanguage, t } = useLanguage();
     const [isLangOpen, setIsLangOpen] = useState(false);
@@ -22,25 +24,31 @@ const Navbar = () => {
             </div>
 
             <div className="flex items-center gap-8 xl:gap-12">
-                <div className="hidden lg:flex space-x-8 xl:space-x-12 text-[10px] font-bold tracking-[0.2em] uppercase text-slate-400">
-                    <Link href="/" className="hover:text-white transition-colors">{t('navbar.home')}</Link>
-                    <Link href="/about" className="hover:text-white transition-colors">{t('navbar.about')}</Link>
-                    <Link href="/services" className="hover:text-white transition-colors">{t('navbar.services')}</Link>
-                    <Link href="/portfolio" className="hover:text-white transition-colors">{t('navbar.portfolio')}</Link>
-                    <Link href="/careers" className="hover:text-white transition-colors">{t('navbar.careers')}</Link>
-                    <Link href="/blog" className="hover:text-white transition-colors">{t('navbar.blog')}</Link>
+                {/* Desktop Menu */}
+                <div className="hidden lg:flex items-center gap-8">
+                    <div className="hidden lg:flex space-x-8 xl:space-x-12 text-[10px] font-bold tracking-[0.2em] uppercase text-slate-500 dark:text-slate-400">
+                        <Link href="/" className="hover:text-black dark:hover:text-white transition-colors">{t('navbar.home')}</Link>
+                        <Link href="/about" className="hover:text-black dark:hover:text-white transition-colors">{t('navbar.about')}</Link>
+                        <Link href="/services" className="hover:text-black dark:hover:text-white transition-colors">{t('navbar.services')}</Link>
+                        <Link href="/portfolio" className="hover:text-black dark:hover:text-white transition-colors">{t('navbar.portfolio')}</Link>
+                        <Link href="/careers" className="hover:text-black dark:hover:text-white transition-colors">{t('navbar.careers')}</Link>
+                        <Link href="/blog" className="hover:text-black dark:hover:text-white transition-colors">{t('navbar.blog')}</Link>
+                    </div>
                 </div>
 
                 <div className="flex gap-4 items-center">
                     {/* Language Switcher */}
                     <div className="relative mr-2">
-                        <button
-                            onClick={() => setIsLangOpen(!isLangOpen)}
-                            className="p-3 text-slate-400 hover:text-white transition-colors flex items-center gap-2"
-                        >
-                            <Globe className="w-5 h-5" />
-                            <span className="text-xs font-bold tracking-widest">{language}</span>
-                        </button>
+                        <div className="flex flex-col gap-6 mt-12 pl-4 border-l-2 border-white/10 dark:border-white/10 border-black/10">
+                            <div className="flex items-center justify-between pr-4">
+                                <span className="text-sm font-bold tracking-widest uppercase text-slate-500 dark:text-slate-400">Theme</span>
+                                <ThemeToggle />
+                            </div>
+                            <button className="flex items-center gap-3 text-slate-400 dark:text-slate-400 hover:text-black dark:hover:text-white" onClick={() => setIsLangOpen(!isLangOpen)}>
+                                <Globe className="w-5 h-5" />
+                                <span className="text-sm font-bold tracking-widest uppercase">{t('language')} ({language.toUpperCase()})</span>
+                            </button>
+                        </div>
 
                         {isLangOpen && (
                             <motion.div

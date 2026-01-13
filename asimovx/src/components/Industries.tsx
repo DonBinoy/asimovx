@@ -72,7 +72,7 @@ const Industries = () => {
     ];
 
     return (
-        <section className="py-44 px-6 md:px-24 bg-gradient-to-b from-black to-slate-950/50 scanlines relative">
+        <section className="py-44 px-6 md:px-24 bg-background scanlines relative">
             <div className="mb-20">
                 <motion.div
                     initial={{ opacity: 0, x: -20 }}
@@ -86,16 +86,16 @@ const Industries = () => {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="text-5xl md:text-7xl font-bold tracking-tight mb-8 max-w-4xl"
+                    className="text-5xl md:text-7xl font-bold tracking-tight mb-8 max-w-4xl text-foreground"
                 >
                     {t('industries.title_1')} <br />
-                    <span className="text-slate-600 font-light">{t('industries.title_2')}</span>
+                    <span className="text-slate-500 dark:text-slate-600 font-light">{t('industries.title_2')}</span>
                 </motion.h2>
                 <motion.p
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-xl text-slate-400 font-light max-w-3xl"
+                    className="text-xl text-slate-500 dark:text-slate-400 font-light max-w-3xl"
                 >
                     {t('industries.description')}
                 </motion.p>
@@ -109,13 +109,13 @@ const Industries = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         whileHover={{ y: -10 }}
                         transition={{ duration: 0.4, delay: index * 0.05 }}
-                        className="group p-8 border border-white/5 rounded-2xl hover:border-accent/30 transition-all duration-300 hover:bg-accent/5"
+                        className="group p-8 border border-border rounded-2xl hover:border-accent/30 transition-all duration-300 hover:bg-accent/5"
                     >
-                        <div className="p-4 bg-accent/10 w-fit rounded-xl mb-6 group-hover:bg-accent group-hover:text-background transition-all duration-500 shadow-[0_0_15px_rgba(236,72,153,0.1)] group-hover:shadow-[0_0_25px_rgba(236,72,153,0.4)]">
+                        <div className="p-4 bg-accent/10 w-fit rounded-xl mb-6 group-hover:bg-accent group-hover:text-white transition-all duration-500 shadow-[0_0_15px_rgba(236,72,153,0.1)] group-hover:shadow-[0_0_25px_rgba(236,72,153,0.4)] text-foreground">
                             {industry.icon}
                         </div>
-                        <h3 className="text-2xl font-bold mb-4 group-hover:text-white transition-colors">{industry.title}</h3>
-                        <p className="text-slate-400 font-light leading-relaxed text-sm">{industry.description}</p>
+                        <h3 className="text-2xl font-bold mb-4 group-hover:text-foreground/80 transition-colors text-foreground">{industry.title}</h3>
+                        <p className="text-slate-500 dark:text-slate-400 font-light leading-relaxed text-sm">{industry.description}</p>
                     </motion.div>
                 ))}
             </div>

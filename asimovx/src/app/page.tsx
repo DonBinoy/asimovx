@@ -19,7 +19,7 @@ export default function Home() {
   });
 
   return (
-    <main className="min-h-screen bg-black selection:bg-accent selection:text-background">
+    <main className="min-h-screen bg-background text-foreground selection:bg-accent selection:text-background">
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-accent z-[100] origin-left"
         style={{ scaleX }}
