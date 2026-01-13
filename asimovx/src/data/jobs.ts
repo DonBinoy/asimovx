@@ -1,0 +1,263 @@
+export interface Job {
+    slug: string;
+    title: string;
+    posted: string;
+    type: string;
+    location: string;
+    description: string;
+    fullDescription?: string;
+    responsibilities?: string[];
+    requirements?: string[];
+    preferredQualifications?: string[];
+    benefits?: string[];
+}
+
+export const JOBS: Job[] = [
+    {
+        slug: "data-scientists",
+        title: "Data Scientists",
+        posted: "January 28, 2025",
+        type: "Full-time",
+        location: "Remote",
+        description: "Are you passionate about machine learning and artificial intelligence? Do you want to work on cutting-edge projects and contribute to the development of a new product segment? We’re looking for two highly motivated Data Scientists to join our team!",
+        fullDescription: "This is an exciting opportunity to gain hands-on experience in ML and AI while playing a key role in the growth of our organization. Based on performance, this position also has the potential for future full-time employment.",
+        responsibilities: [
+            "Assist in the development and implementation of machine learning algorithms and AI models.",
+            "Contribute to the design and execution of experiments and data analysis.",
+            "Collaborate with the team to collect, clean, and preprocess data.",
+            "Research and stay up-to-date with the latest advancements in machine learning and AI.",
+            "Provide regular progress updates and insights to the team."
+        ],
+        requirements: [
+            "Currently pursuing or recently completed a graduate or postgraduate degree in a relevant field (e.g., Computer Science, Data Science, Artificial Intelligence, etc.).",
+            "Familiarity with machine learning concepts and algorithms.",
+            "Proficiency in programming languages such as Python, R, or Java.",
+            "Experience with data manipulation, preprocessing, and analysis.",
+            "Strong problem-solving and analytical skills."
+        ],
+        benefits: [
+            "Work on innovative projects that challenge and inspire you.",
+            "Gain valuable experience in a collaborative and supportive environment.",
+            "Potential for full-time employment based on performance."
+        ]
+    },
+    {
+        slug: "mdm-developer",
+        title: "Master Data Management (MDM) Developer",
+        posted: "July 26, 2024",
+        type: "Full-time",
+        location: "Remote",
+        description: "We are seeking a skilled Master Data Management (MDM) Developer to join our team. The ideal candidate will have extensive experience in developing and implementing MDM solutions, specifically using Reltio and Informatica platforms.",
+        fullDescription: "The MDM Developer will be responsible for designing, developing, and implementing Master Data Management solutions using Informatica’s Intelligent Data Management Cloud (IDMC) or Reltio Hub. Your technical expertise and ability to understand and translate client needs into effective data management solutions will be critical to our success in delivering high-quality consultancy services.",
+        responsibilities: [
+            "Design, develop, and maintain MDM solutions using Reltio and Informatica platforms",
+            "Design, configure, and optimize MDM data models, workflows, and integrations to meet client requirements.",
+            "Implement data quality rules, match and merge rules, and survivorship rules.",
+            "Assist clients with the deployment and ongoing management of MDM solutions, including training and support.",
+            "Develop and maintain data integration processes between data sources and other enterprise systems.",
+            "Develop ETL processes using Informatica tools to load and synchronize data.",
+            "Ensure data integrity, quality, and consistency across client systems by implementing robust data validation and cleansing processes.",
+            "Conduct data profiling, data cleansing, and data enrichment activities.",
+            "Optimize MDM processes for performance and scalability.",
+            "Provide technical support and troubleshooting for MDM solutions, addressing issues and implementing improvements as needed.",
+            "Work closely with business analysts, data architects, and other stakeholders to understand requirements and deliver solutions.",
+            "Work hand in hand with the MDM architect to develop the MDM model and implement the same in the platform of choice.",
+            "Provide technical guidance and support to team members.",
+            "Create and maintain comprehensive documentation for MDM solutions, including data models, process flows, and configuration settings.",
+            "Generate reports and dashboards to provide insights into MDM processes and data quality.",
+            "Stay current with advancements in MDM technologies and best practices, particularly with Reltio and Informatica platforms."
+        ],
+        requirements: [
+            "Bachelor’s degree in Computer Science, Information Technology, or a related field.",
+            "3+ years of experience in developing and implementing MDM solutions.",
+            "Hands-on experience with Reltio and Informatica MDM platforms.",
+            "Strong understanding of data modeling, data integration, and data quality management.",
+            "Proficiency in SQL and experience with data migration and ETL processes.",
+            "Knowledge of data governance and data quality principles.",
+            "Excellent problem-solving and analytical skills.",
+            "Strong communication and interpersonal skills, with the ability to work effectively with clients and team members.",
+            "Ability to manage multiple projects and priorities in a fast-paced environment.",
+            "Detail-oriented with a focus on delivering high-quality work."
+        ],
+        preferredQualifications: [
+            "Master’s degree in Computer Science, Information Technology, or a related field.",
+            "Certification in Reltio or Informatica MDM platforms.",
+            "Experience in the consulting industry, working directly with clients to deliver tailored solutions.",
+            "Familiarity with Agile development methodologies.",
+            "Knowledge of cloud-based data management solutions and architectures(e.g., AWS, Azure, Google Cloud)."
+        ],
+        benefits: [
+            "Competitive pay",
+            "Opportunity to work on cutting-edge data management projects.",
+            "Collaborative and innovative work environment.",
+            "Professional development and career growth opportunities"
+        ]
+    },
+    {
+        slug: "mdm-architect",
+        title: "Master Data Management Architect",
+        posted: "July 26, 2024",
+        type: "Full-time",
+        location: "Remote",
+        description: "We are seeking an experienced Master Data Management (MDM) Architect to join our team. The ideal candidate will design and implement robust data management solutions tailored to our clients’ unique business processes and objectives.",
+        fullDescription: "You will have a strong background in data modeling, data flow design, and database architecture, as well as extensive experience with data integration, governance, and optimization. As an MDM Architect, you will collaborate closely with clients and key stakeholders to ensure data integrity and security, provide recommendations on database technologies, and lead initiatives to enhance data infrastructure that meets the clients requirements. Your role will be critical in enabling efficient data management practices and supporting our clients’ mission-critical operations.",
+        responsibilities: [
+            "Design and develop comprehensive data models, data flow, interfaces, and infrastructure to meet clients’ information requirements in MDM platforms like Informatica and Reltio.",
+            "Implement overarching data strategies that align with clients’ organizational goals and objectives.",
+            "Identify and integrate data sources, both internal and external, in alignment with clients’ overall data strategies.",
+            "Monitor, optimize, and maintain clients’ data infrastructure to ensure high performance and reliability.",
+            "Evaluate and determine database structural necessities through analysis of clients’ operations, applications, and programming needs.",
+            "Prepare detailed database design and architecture reports for clients and stakeholders.",
+            "Advise senior leadership and clients on critical data management issues and best practices.",
+            "Collaborate with relevant personnel to address data security requirements, ensuring technical solutions uphold data integrity and security standards.",
+            "Provide recommendations on new database technologies and innovative architectures to clients.",
+            "Work with systems analysts, engineers, and system owners to design applications that enhance data management capabilities for clients."
+        ],
+        requirements: [
+            "Bachelor of Science Degree in IT, data management, or a related field",
+            "7-12 years of experience in IT, aligned with Data Modelling, Technical Implementations",
+            "Expertise in Master Data Platforms like Reltio and Informatica",
+            "Excellent communication skills, both written and verbal",
+            "Strong ability to lead, work independently and as part of a team",
+            "Analytical and problem-solving skills for troubleshooting systems problems"
+        ],
+        preferredQualifications: [
+            "Master’s degree in IT or a related field",
+            "Certified Data Professional (CDP)",
+            "Certified Data Management Professional (CDMP)",
+            "Reltio Solution Architect Certification",
+            "Informatica Certifications"
+        ],
+        benefits: [
+            "Competitive pay",
+            "Opportunity to work on cutting-edge data management projects.",
+            "Collaborative and innovative work environment.",
+            "Professional development and career growth opportunities"
+        ]
+    },
+    {
+        slug: "technical-integration-specialist",
+        title: "Technical Integration Specialist",
+        posted: "July 26, 2024",
+        type: "Full-time",
+        location: "Remote",
+        description: "We are seeking a well-rounded, fast-learning Technical Integration Specialist with substantial system integration experience. In this role, you will be responsible for designing, developing, and maintaining data integration solutions using MDM platforms and Azure technologies.",
+        fullDescription: "The ideal candidate will have extensive experience in data integration, ETL processes, and cloud platforms, ensuring seamless data flow across systems and applications to support business operations and decision-making.",
+        responsibilities: [
+            "Design, develop, and implement ETL processes using MDM platforms and Integrate them to Cloud Data Storages or downstream applications",
+            "Develop and maintain data integration workflows, mappings, and scripts.",
+            "Implement data storage solutions using Azure SQL Database, Azure Data Lake Storage, and other Azure services.",
+            "Ensure data quality and integrity across all integration processes.",
+            "Perform data profiling, cleansing, and transformation to meet business requirements.",
+            "Optimize ETL processes for performance and scalability.",
+            "Handle technical implementation issues and risks, monitoring progress effectively.",
+            "Lead with problem resolution and risk mitigation, escalating issues as necessary.",
+            "Work closely with business analysts, data architects, and other stakeholders to understand data requirements and deliver solutions.",
+            "Provide clients with technical integration assistance and training on all platform features.",
+            "Define requirements by conducting discovery sessions, scope reviews, and process analyses.",
+            "Create and maintain comprehensive documentation for data integration processes, workflows, and mappings.",
+            "Document technical specifications and operational procedures."
+        ],
+        requirements: [
+            "Bachelor’s degree in Computer Science, Information Technology, or a related field.",
+            "Minimum of 5 years of experience in data integration and ETL development in MDM Platforms like Reltio/Informatica",
+            "Minimum of 3 years of experience with Azure data services, including Azure Data Factory, Azure SQL Database, and Azure Data Lake Storage.",
+            "Strong knowledge of APIs, microservices, and cloud solutions.",
+            "Technical expertise in SQL.",
+            "Flexibility and commitment necessary to thrive in a dynamic team environment.",
+            "Strong focus on client needs with a deep sense of empathy for the process.",
+            "An independent mindset requiring minimal supervision to complete tasks and projects.",
+            "Demonstrated ownership of projects and strong decision-making skills."
+        ],
+        preferredQualifications: [
+            "Knowledge of data warehousing concepts and methodologies.",
+            "Strong problem-solving and analytical skills.",
+            "Excellent communication and teamwork abilities.",
+            "Informatica Certified Professional (Preferred)",
+            "Microsoft Certified: Azure Data Engineer Associate (Preferred)"
+        ],
+        benefits: [
+            "Competitive pay",
+            "Opportunity to work on cutting-edge data management projects.",
+            "Collaborative and innovative work environment.",
+            "Professional development and career growth opportunities"
+        ]
+    },
+    {
+        slug: "azure-devops-engineer",
+        title: "Offshore Azure DevOps Engineer",
+        posted: "July 26, 2024",
+        type: "Full-time",
+        location: "Remote",
+        description: "We are seeking a skilled Azure DevOps Engineer to design, build, and operate Azure cloud environments for our clients. In this role, you will collaborate with clients, sales, and presales teams to draw architecture plans and then build and operate these environments.",
+        fullDescription: "Following a development and support principle, you will continuously improve the systems you develop. This role offers the flexibility of remote work from India with hours overlapping with US timezone.",
+        responsibilities: [
+            "Collaborate with clients, sales, and presales teams to design cloud architecture.",
+            "Build Azure cloud environments based on client requirements.",
+            "Operate and maintain the Azure environments, continuously improving them.",
+            "Manage the entire development lifecycle, ensuring variety in day-to-day tasks.",
+            "Split time effectively between remote work and collaboration with the US teams.",
+            "Create and maintain comprehensive client facing and internal documentation for development solutions.",
+            "Work closely with business analysts, data architects, and other stakeholders to understand requirements and deliver solutions."
+        ],
+        requirements: [
+            "2-4 years of relevant experience in a DevOps role.",
+            "Professional proficiency in English.",
+            "Strong communication skills.",
+            "In-depth knowledge of Azure PaaS services and their application in cloud solutions.",
+            "Expertise in Azure networking, including virtual networks, firewalls, load balancers, and VPNs.",
+            "Experience in migrating and transforming systems to the cloud using Azure tools and best practices.",
+            "Proficiency in Azure DevOps or GitHub for continuous integration, delivery pipelines, and version control.",
+            "Skills in Infrastructure as Code (ARM/Bicep) and Git source control for provisioning and deploying cloud resources.",
+            "Automation scripting skills with PowerShell and Azure CLI.",
+            "Strong problem-solving and analytical skills.",
+            "Team player with a collaborative attitude."
+        ],
+        preferredQualifications: [
+            "Experience with REST APIs and Node.js development.",
+            "Knowledge of Terraform for cross-platform cloud provisioning.",
+            "Specialization in Azure Kubernetes Service (AKS) for container orchestration.",
+            "Azure Certification (AZ-104 or AZ-305)",
+            "Certified Kubernetes Administrator (CKA)"
+        ],
+        benefits: [
+            "Competitive pay",
+            "Opportunity to work on cutting-edge data management projects.",
+            "Collaborative and innovative work environment.",
+            "Professional development and career growth opportunities"
+        ]
+    },
+    {
+        slug: "computer-vision-engineer",
+        title: "Computer Vision Engineer",
+        posted: "June 26, 2023",
+        type: "Full-time",
+        location: "Remote",
+        description: "We are seeking multiple Computer Vision Specialists, who have interests in cutting-edge deep learning technologies to help us solve unsolved computer vision problems.",
+        responsibilities: [
+            "Develop computer vision systems for enterprises to be used by hundreds of our customers",
+            "Enhance existing Computer vision systems to achieve high performance",
+            "Prototype new algorithms rapidly, iterating to achieve high levels of performance",
+            "Package these prototypes as robust models written in production level code to be integrated into the product",
+            "Work closely with the ML engineers to explore and enhance new product features leading to new areas of business"
+        ],
+        requirements: [
+            "Strong understanding of linear algebra, optimisation, probability, statistics",
+            "Experience in the data science methodology from exploratory data analysis, feature engineering, model selection, deployment of the model at scale and model evaluation",
+            "Background in machine learning with experience in large scale training and convolutional neural networks",
+            "Deep understanding of evaluation metrics for different computer vision tasks",
+            "Knowledge of common architectures for various computer vision tasks like object detection, recognition, and semantic segmentation",
+            "Experience with model quantization is a plus",
+            "Experience with Python Web Framework (Django/Flask/FastAPI), Machine Learning frameworks like Tensorflow/Keras/Pytorch",
+            "Skills:- TensorFlow, Computer Vision and Machine Learning (ML)"
+        ]
+    },
+    {
+        slug: "data-science-intern",
+        title: "Data Science Intern",
+        posted: "June 26, 2023",
+        type: "Internship",
+        location: "Remote",
+        description: "We are seeking two highly motivated interns to join our team for special projects involving the development of a new product segment. The interns will have the opportunity to gain hands-on experience in machine learning and artificial intelligence while contributing to the growth of our organization."
+    }
+];
