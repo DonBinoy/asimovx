@@ -1,86 +1,121 @@
-# Asimovx
+<div align="center">
 
-**Tech Consulting Reimagined.**
+# ASIMOVX
+### Tech Consulting Reimagined
 
-Asimovx is a premium consulting platform specializing in AI solutions, Computer Vision, and Digital Transformation. This project is a modern, high-performance web application built with Next.js, featuring a futuristic "dark mode" aesthetic, smooth animations, and comprehensive multilingual support.
+![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-1.0.0-blue?style=for-the-badge)
+![License](https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge)
 
-## 🚀 Features
+<br />
 
--   **Premium UI/UX:** Futuristic dark theme with glassmorphism effects, gradient accents, and smooth scroll animations powered by Framer Motion.
--   **Multilingual Support:** Full content translation for English (EN), Spanish (ES), and Swedish (SV).
--   **Dynamic Careers Portal:**
-    -   Search and filter job listings.
-    -   Detailed job description pages with dynamic routing.
-    -   **Application Form:** Modal-based application submission with validation and file upload.
--   **Comprehensive Service Showcase:** Detailed breakdowns of core AI services (CV, NLP, GenAI) and industry-specific solutions.
--   **Interactive Pages:**
-    -   **Home:** Hero section, features, process timeline, and animated stats.
-    -   **About Us:** Company vision, mission, and leadership team grid.
-    -   **Services:** Extensive service catalog with "Contact Us" integration.
-    -   **Portfolio:** Showcase of selected projects.
-    -   **Blog:** Articles and news section.
-    -   **Contact:** Office locations (Sweden, Spain, Latvia) and enquiry form.
+**Unlock the potential of AI with premium, industry-leading tech consulting.**
+
+[Features](#-features) • [Tech Stack](#-tech-stack) • [Getting Started](#-getting-started) • [Contact](#-contact)
+
+</div>
+
+---
+
+## 🚀 Overview
+
+**Asimovx** is a state-of-the-art web platform designed to showcase the future of AI consulting. Built with a focus on **premium aesthetics**, **multilingual accessibility**, and **high-performance interactivity**, it serves as the digital headquarters for Asimovx Technologies AB.
+
+The application features a futuristic "dark mode" design language, utilizing glassmorphism, subtle gradients, and fluid animations to create an immersive user experience.
+
+## ✨ Key Features
+
+### 🌍 Global Reach
+- **Multilingual Core:** Seamlessly switch between **English**, **Spanish**, and **Swedish**.
+- **Localized Content:** All pages, including technical services and job descriptions, are fully translated.
+
+### 💼 Smart Careers Portal
+- **Dynamic Job Board:** Search and filter capabilities for finding the perfect role.
+- **Detailed Listings:** Rich, dynamic job pages (`[slug]`) with comprehensive role info.
+- **One-Click Apply:** Integrated Application Modal with file upload and validation.
+
+### 🧠 Core AI Services
+We showcase expertise in three pillars of modern AI:
+| | | |
+|:---:|:---:|:---:|
+| **Computer Vision** 👁️ | **Generative AI** 🧠 | **NLP** 💬 |
+| Object Detection & Tracking | Custom LLMs & Content Gen | Text Analysis & Pipelines |
+
+### ⚡ Interactive Experience
+- **Home:** Hero section with animated timeline and statistics.
+- **Services:** Grid layout for 12+ industry solutions.
+- **Contact:** Split-layout enquiry form with interactive location details.
+
+---
 
 ## 🛠️ Tech Stack
 
--   **Framework:** [Next.js 15](https://nextjs.org/) (App Router)
--   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
--   **Animations:** [Framer Motion](https://www.framer.com/motion/)
--   **Icons:** [Lucide React](https://lucide.dev/)
--   **Language:** TypeScript
+This project is built on a foundation of modern, scalable technologies.
+
+| Category | Technology | Description |
+|:--- |:--- |:--- |
+| **Framework** | ![Next.js](https://img.shields.io/badge/Next.js-black?style=flat-square&logo=next.js&logoColor=white) | App Router, Server Components |
+| **Language** | ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white) | Typed safety & scalability |
+| **Styling** | ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white) | Utility-first responsive design |
+| **Animation** | ![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white) | Production-ready animations |
+| **Icons** | **Lucide React** | Clean, consistent iconography |
+
+---
 
 ## 📂 Project Structure
 
-```
+```bash
 src/
-├── app/                  # App Router pages
-│   ├── about/            # About Us page
-│   ├── blog/             # Blog page
-│   ├── careers/          # Careers listing & dynamic [slug] details
-│   ├── contact/          # Contact Us page
-│   ├── portfolio/        # Portfolio page
-│   ├── services/         # Services page
-│   ├── layout.tsx        # Root layout with language context
-│   └── page.tsx          # Home page
-├── components/           # Reusable UI components
-│   ├── Navbar.tsx        # Responsive navigation with language switcher
-│   ├── Footer.tsx        # Site footer
-│   ├── ApplicationForm.tsx # Job application modal
-│   └── ... (Hero, Features, etc.)
-├── data/                 # Static data files
-│   └── jobs.ts           # Job listings database
-├── context/              # React Contexts
-│   └── LanguageContext.tsx # Language state management
+├── app/                  # ⚡ Next.js App Router
+│   ├── about/            # Company Info & Team
+│   ├── blog/             # Articles & News
+│   ├── careers/          # Job Board & Applications
+│   ├── contact/          # Locations & Enquiry Form
+│   ├── portfolio/        # Project Showcase
+│   ├── services/         # AI Service Catalog
+│   └── layout.tsx        # Root Layout & Providers
+├── components/           # 🧩 Reusable UI Components
+│   ├── Navbar.tsx        # Responsive Nav + Lang Switcher
+│   ├── ApplicationForm.tsx # Modal Form Logic
+│   └── ...
+├── context/              # 🌐 Global State
+│   └── LanguageContext.tsx # Translation Logic
 └── utils/
-    └── translations.ts   # Translation strings (EN, ES, SV)
+    └── translations.ts   # 📖 Localization Dictionary (EN/ES/SV)
 ```
+
+---
 
 ## ⚡ Getting Started
 
-1.  **Clone the repository:**
+Ready to run Asimovx locally? Follow these steps:
 
+1.  **Clone the Repo**
     ```bash
     git clone https://github.com/yourusername/asimovx.git
     cd asimovx
     ```
 
-2.  **Install dependencies:**
-
+2.  **Install Dependencies**
     ```bash
     npm install
-    # or
-    yarn install
+    # or yarn install
     ```
 
-3.  **Run the development server:**
-
+3.  **Launch Dev Server**
     ```bash
     npm run dev
     ```
 
-4.  **Open your browser:**
-    Navigate to [http://localhost:3000](http://localhost:3000) to view the application.
+4.  **Explore**
+    Open `http://localhost:3000` in your browser.
 
-## 📝 License
+---
 
-This project is proprietary software of Asimovx Technologies AB.
+## 📞 Contact
+
+**Asimovx Technologies AB**
+
+🇸🇪 **Sweden** | 🇪🇸 **Spain** | 🇱🇻 **Latvia**
+
+📧 [vinil.valsan@asimovx.se](mailto:vinil.valsan@asimovx.se)
