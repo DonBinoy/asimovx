@@ -5,9 +5,11 @@ import { motion } from 'framer-motion';
 import { ArrowLeft, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useLanguage } from '@/context/LanguageContext';
 
 
 export default function HumanPoseArticle() {
+    const { t } = useLanguage();
     return (
         <main className="min-h-screen bg-black text-foreground">
             <div className="py-24 px-6 md:px-24 max-w-5xl mx-auto">
@@ -50,43 +52,43 @@ export default function HumanPoseArticle() {
 
                     <div className="prose prose-invert prose-lg max-w-none">
                         <p className="text-xl text-slate-300 leading-relaxed mb-8">
-                            Pose Estimation is one of the more elegant applications of neural networks and is startlingly accurate and sometimes, seems like something right out of science fiction.
+                            {t('blog_articles.human_pose.content.p1')}
                         </p>
 
                         <p className="text-slate-400 leading-relaxed mb-6">
-                            For Instance, check out Google's Move Mirror, an in-browser application that estimates the user's pose in real time and then displays a movie still with the actor holding the same pose.
+                            {t('blog_articles.human_pose.content.p2')}
                         </p>
 
                         <p className="text-slate-400 leading-relaxed mb-6">
-                            When I glanced over it, however, I got an idea. What if the same methodology could be used to compare the same actions performed by two people? This technology could then be used to teach people over remote view! I got to work immediately and tried to reverse engineer the techniques used by Google.
+                            {t('blog_articles.human_pose.content.p3')}
                         </p>
 
-                        <h2 className="text-3xl font-bold mt-16 mb-6 text-white">The Challenge</h2>
+                        <h2 className="text-3xl font-bold mt-16 mb-6 text-white">{t('blog_articles.human_pose.content.h_challenge')}</h2>
                         <p className="text-slate-400 leading-relaxed mb-6">
-                            I found, to my disappointment, a few Tensorflow.js tutorials and theories on the same and nothing in python. This was understandable as it was an in-browser application and so, I decided to port the code to mighty Python. A few sessions of research showed me that they were using Posenet, a fast yet accurate model, for estimating pose.
+                            {t('blog_articles.human_pose.content.p4')}
                         </p>
 
                         <p className="text-slate-400 leading-relaxed mb-6">
-                            The Objective was simple: I wanted to go one step ahead and compare a whole action such as a punch or a kick with an image and tell me the extend to which it was correct.
+                            {t('blog_articles.human_pose.content.p5')}
                         </p>
 
-                        <h2 className="text-3xl font-bold mt-16 mb-6 text-white">The Model</h2>
+                        <h2 className="text-3xl font-bold mt-16 mb-6 text-white">{t('blog_articles.human_pose.content.h_model')}</h2>
                         <p className="text-slate-400 leading-relaxed mb-6">
-                            As I stated earlier, Google Mirror uses PoseNet, a deep learning model which specifies 17 points on the human body. I found a good python implementation of it here.
+                            {t('blog_articles.human_pose.content.p6')}
                         </p>
                         <div className="relative h-[500px] w-full mb-16 rounded-3xl overflow-hidden border border-white/5 shadow-2xl bg-white/5">
                             <Image src="/images/hp/hp2.jpg" alt="PoseNet Model" fill className="object-contain p-4" />
                         </div>
 
-                        <h2 className="text-3xl font-bold mt-16 mb-6 text-white">Defining Similarity</h2>
+                        <h2 className="text-3xl font-bold mt-16 mb-6 text-white">{t('blog_articles.human_pose.content.h_similarity')}</h2>
                         <p className="text-slate-400 leading-relaxed mb-6">
-                            The next challenge was defining similarity. When we think about the problem, we see that there are many uncertainties to be addressed: humans can have different heights and body shapes, they might be in different parts in the picture: one person may have been standing close to the camera, another might have been faraway. All these problems have to be solved in order to output a correct result.
+                            {t('blog_articles.human_pose.content.p_similarity')}
                         </p>
 
-                        <h3 className="text-2xl font-bold mt-12 mb-4 text-accent">Key Solutions:</h3>
+                        <h3 className="text-2xl font-bold mt-12 mb-4 text-accent">{t('blog_articles.human_pose.content.h_solutions')}</h3>
                         <ul className="list-disc list-inside space-y-3 text-slate-400 mb-8">
-                            <li><strong className="text-white">New Bounding Box:</strong> From the model output, we get the co-ordinates of the 17 key-points on a person's body. This information can be used to create a new bounding box which tightly covers the person in the picture.</li>
-                            <li><strong className="text-white">Normalization:</strong> In order to account for the size inconsistencies, we perform L2 normalization of the points in order to transform it into a unit vector.</li>
+                            <li><strong className="text-white">{t('blog_articles.human_pose.content.li_bbox_bold')}</strong> {t('blog_articles.human_pose.content.li_bbox')}</li>
+                            <li><strong className="text-white">{t('blog_articles.human_pose.content.li_norm_bold')}</strong> {t('blog_articles.human_pose.content.li_norm')}</li>
                         </ul>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
                             <div className="relative h-[450px] w-full rounded-3xl overflow-hidden border border-white/5 shadow-xl bg-white/5 group hover:border-accent/30 transition-colors">
@@ -97,12 +99,12 @@ export default function HumanPoseArticle() {
                             </div>
                         </div>
 
-                        <h2 className="text-3xl font-bold mt-16 mb-6 text-white">Cosine Similarity</h2>
+                        <h2 className="text-3xl font-bold mt-16 mb-6 text-white">{t('blog_articles.human_pose.content.h_cosine')}</h2>
                         <p className="text-slate-400 leading-relaxed mb-6">
-                            Now that we have standardized the pose vectors, it is time to choose a similarity measure. I chose cosine similarity for this particular instance, mainly because we are working with vectors.
+                            {t('blog_articles.human_pose.content.p_cosine_1')}
                         </p>
                         <p className="text-slate-400 leading-relaxed mb-6">
-                            The 17 key-points are converted into a vector and plotted in high dimensional space. This vector plotting is compared to another vector plot from our benchmark image. The direction of vectors here are an indication of the similarity of the poses.
+                            {t('blog_articles.human_pose.content.p_cosine_2')}
                         </p>
                         <div className="flex flex-col gap-12 mb-16">
                             <div className="relative h-[350px] w-full rounded-3xl overflow-hidden border border-white/5 shadow-xl bg-white/5 group hover:border-accent/30 transition-colors">
@@ -113,42 +115,42 @@ export default function HumanPoseArticle() {
                             </div>
                         </div>
 
-                        <h2 className="text-3xl font-bold mt-16 mb-6 text-white">Drawbacks of Initial Approach</h2>
+                        <h2 className="text-3xl font-bold mt-16 mb-6 text-white">{t('blog_articles.human_pose.content.h_drawbacks')}</h2>
                         <ul className="list-disc list-inside space-y-3 text-slate-400 mb-8">
-                            <li>The algorithm does not take into account the time taken to perform the activity</li>
-                            <li>There is no scope of attaining a 100 percent score since the average is taken against one picture</li>
+                            <li>{t('blog_articles.human_pose.content.li_drawback_1')}</li>
+                            <li>{t('blog_articles.human_pose.content.li_drawback_2')}</li>
                         </ul>
 
-                        <h2 className="text-3xl font-bold mt-16 mb-6 text-white">Dynamic Time Warping (DTW)</h2>
+                        <h2 className="text-3xl font-bold mt-16 mb-6 text-white">{t('blog_articles.human_pose.content.h_dtw')}</h2>
                         <p className="text-slate-400 leading-relaxed mb-6">
-                            Even though it sounds like a sci-fi method of time travel, it really isn't. It is just a method used in comparing sequences and graphs of different lengths. It matches the different troughs and crests in a graph using one to many matching and such, resulting in synced up frames on its own.
+                            {t('blog_articles.human_pose.content.p_dtw_1')}
                         </p>
                         <div className="relative h-[500px] w-full mb-16 rounded-3xl overflow-hidden border border-white/5 shadow-2xl bg-white/5 group">
                             <Image src="/images/hp/hp7.jpg" alt="Dynamic Time Warping" fill className="object-contain p-4 transition-transform duration-500 group-hover:scale-105" />
                         </div>
                         <p className="text-slate-400 leading-relaxed mb-6">
-                            This method seemed ideal for my use case, as I had similar graphs for each of the 17 key-points as the action was performed. I could then use DTW to compare these graphs and get 17 scores for each of the 17 key-points. An average of these 17 scores could be then taken as the total score.
+                            {t('blog_articles.human_pose.content.p_dtw_2')}
                         </p>
 
-                        <h2 className="text-3xl font-bold mt-16 mb-6 text-white">Future Improvements</h2>
+                        <h2 className="text-3xl font-bold mt-16 mb-6 text-white">{t('blog_articles.human_pose.content.h_future')}</h2>
                         <ul className="list-disc list-inside space-y-3 text-slate-400 mb-8">
-                            <li><strong className="text-white">Automation:</strong> Recognition of action performed and orientation automatically</li>
-                            <li><strong className="text-white">Confidence Scores:</strong> Using confidence scores returned by Posenet for more efficient scoring</li>
-                            <li><strong className="text-white">Point Specification:</strong> According to the action to be performed, specific points can be used to increase accuracy</li>
-                            <li><strong className="text-white">Feedback System:</strong> Providing feedback to users on which body part's movement needs correction</li>
+                            <li><strong className="text-white">{t('blog_articles.human_pose.content.li_auto_bold')}</strong> {t('blog_articles.human_pose.content.li_auto')}</li>
+                            <li><strong className="text-white">{t('blog_articles.human_pose.content.li_score_bold')}</strong> {t('blog_articles.human_pose.content.li_score')}</li>
+                            <li><strong className="text-white">{t('blog_articles.human_pose.content.li_point_bold')}</strong> {t('blog_articles.human_pose.content.li_point')}</li>
+                            <li><strong className="text-white">{t('blog_articles.human_pose.content.li_feedback_bold')}</strong> {t('blog_articles.human_pose.content.li_feedback')}</li>
                         </ul>
 
 
-                        <h2 className="text-3xl font-bold mt-16 mb-6 text-white">References</h2>
+                        <h2 className="text-3xl font-bold mt-16 mb-6 text-white">{t('blog_articles.human_pose.content.h_refs')}</h2>
                         <ul className="space-y-2 text-accent">
                             <li>
                                 <a href="https://medium.com/tensorflow/move-mirror-an-ai-experiment-with-pose-estimation-in-the-browser-using-tensorflow-js-2f7b769f9b23" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                                    Move Mirror - TensorFlow Blog
+                                    {t('blog_articles.human_pose.content.ref_1')}
                                 </a>
                             </li>
                             <li>
                                 <a href="https://towardsdatascience.com/dynamic-time-warping-3933f25fcdd" target="_blank" rel="noopener noreferrer" className="hover:underline">
-                                    Dynamic Time Warping - Towards Data Science
+                                    {t('blog_articles.human_pose.content.ref_2')}
                                 </a>
                             </li>
                         </ul>

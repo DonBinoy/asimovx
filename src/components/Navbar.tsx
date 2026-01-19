@@ -60,7 +60,7 @@ const Navbar = () => {
                                     animate={{ opacity: 1, scale: 1, y: 0 }}
                                     className="absolute right-0 top-full mt-4 w-32 bg-zinc-900 border border-white/10 rounded-xl shadow-xl overflow-hidden backdrop-blur-xl"
                                 >
-                                    {['EN', 'ES', 'SV'].map((lang) => (
+                                    {['EN', 'ES', 'SV', 'DA'].map((lang) => (
                                         <button
                                             key={lang}
                                             onClick={() => {
@@ -69,7 +69,7 @@ const Navbar = () => {
                                             }}
                                             className={`w-full text-left px-4 py-3 text-xs font-bold tracking-widest hover:bg-white/10 transition-colors ${language === lang ? 'text-accent bg-white/5' : 'text-slate-400'}`}
                                         >
-                                            {lang === 'EN' ? 'English' : lang === 'ES' ? 'Español' : 'Svenska'}
+                                            {lang === 'EN' ? 'English' : lang === 'ES' ? 'Español' : lang === 'SV' ? 'Svenska' : 'Dansk'}
                                         </button>
                                     ))}
                                 </motion.div>
@@ -121,7 +121,7 @@ const Navbar = () => {
                         <div className="flex items-center gap-8">
                             <ThemeToggle />
                             <div className="flex gap-4 text-xs font-bold tracking-widest">
-                                {['EN', 'ES', 'SV'].map((lang) => (
+                                {['EN', 'ES', 'SV', 'DA'].map((lang) => (
                                     <button
                                         key={lang}
                                         onClick={() => {

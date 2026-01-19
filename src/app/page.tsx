@@ -9,8 +9,10 @@ import Blog from '@/components/Blog';
 import CTA from '@/components/CTA';
 import Footer from '@/components/Footer';
 import { motion, useScroll, useSpring } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Home() {
+  const { t } = useLanguage();
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -37,9 +39,9 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <span className="text-[10px] font-bold tracking-[0.5em] uppercase text-slate-600 mb-8 block font-orbitron">The Asimovx Standard</span>
+          <span className="text-[10px] font-bold tracking-[0.5em] uppercase text-slate-600 mb-8 block font-orbitron">{t('standards_banner.tagline')}</span>
           <h2 className="text-5xl md:text-[8rem] font-bold tracking-tighter leading-none mb-12">
-            EXCELLENCE <br /> IS ONLY THE <br /> <span className="accent-gradient italic">START.</span>
+            {t('standards_banner.line_1')} <br /> {t('standards_banner.line_2')} <br /> <span className="accent-gradient italic">{t('standards_banner.line_3')}</span>
           </h2>
         </motion.div>
       </section>

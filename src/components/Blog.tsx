@@ -7,23 +7,26 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useLanguage } from '@/context/LanguageContext';
 
-const ARTICLES = [
-    {
-        title: "Human Pose Comparison and Action Scoring using Deep Learning, OpenCV & Python",
-        excerpt: "Pose Estimation is one of the more elegant applications of neural networks and is startlingly accurate and sometimes, seems like...",
+const ARTICLE_CONFIG = {
+    human_pose: {
         link: "/blog/human-pose",
         image: "/images/hp/hp1.jpg"
     },
-    {
-        title: "Real-Time Image Classification On Android Using Flutter, TFlite",
-        excerpt: "Making a smartphone app from scratch might seem a daunting task to most newbies and maybe even seasoned programmers. Enter Flutter....",
+    realtime_image: {
         link: "/blog/realtime-image-classification",
         image: "/images/tflite/tf1.jpg"
     }
-];
+};
 
 const Blog = () => {
     const { t } = useLanguage();
+
+    const articles = Object.entries(ARTICLE_CONFIG).map(([id, config]) => ({
+        id,
+        ...config,
+        title: t(`blog_articles.${id}.title`),
+        excerpt: t(`blog_articles.${id}.excerpt`)
+    }));
 
     return (
         <section className="py-44 px-6 md:px-24 bg-background text-foreground relative">
@@ -47,7 +50,7 @@ const Blog = () => {
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {ARTICLES.map((article, index) => (
+                    {articles.map((article, index) => (
                         <motion.article
                             key={index}
                             initial={{ opacity: 0, y: 30 }}

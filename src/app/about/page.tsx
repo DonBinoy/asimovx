@@ -4,32 +4,48 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Linkedin, Mail } from 'lucide-react';
+import { Linkedin, Mail, BookOpen } from 'lucide-react';
 
 const TEAM = [
     {
         name: "Krishna Raj R",
         role: "AI HEAD | FOUNDER",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop",
-        bio: "Leading the AI revolution with over 15 years of experience in machine learning and neural networks."
+        image: "/images/humans/KR.jpg",
+        bio: "Leading the AI revolution with over 15 years of experience in machine learning and neural networks.",
+        links: [
+            { icon: Linkedin, url: "https://www.linkedin.com/in/krishna-raj-r-7aa791167/" },
+            { icon: BookOpen, url: "https://medium.com/@krishnarajr319" }
+        ]
     },
     {
         name: "Liju ps",
         role: "TECH HEAD | FOUNDER",
-        image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1000&auto=format&fit=crop",
-        bio: "Architecting scalable technical solutions that power enterprise-grade AI applications."
+        image: "/images/humans/liju.jpg",
+        bio: "Architecting scalable technical solutions that power enterprise-grade AI applications.",
+        links: []
     },
     {
         name: "Deepa Subramanian",
         role: "Head of Pre-Sales",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop",
-        bio: "Bridging the gap between complex technical capabilities and business value verification."
+        image: "/images/humans/deepa.jpeg",
+        bio: "Bridging the gap between complex technical capabilities and business value verification.",
+        links: [
+            { icon: Linkedin, url: "https://www.linkedin.com/in/deepa-n-p-2726065/" }
+        ]
     },
     {
         name: "Vignesh Krishnan",
         role: "HEAD OF MARKETING",
-        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1000&auto=format&fit=crop",
-        bio: "Crafting compelling narratives that showcase the transformative power of our AI solutions."
+        image: "/images/humans/vignesh.jpeg",
+        bio: "Crafting compelling narratives that showcase the transformative power of our AI solutions.",
+        links: []
+    },
+    {
+        name: "Clifton Benjamin",
+        role: "UI/UX",
+        image: "/images/humans/clifton.jpeg",
+        bio: "Designing intuitive and engaging user experiences.",
+        links: []
     }
 ];
 
@@ -139,7 +155,7 @@ export default function About() {
                         </p>
                     </motion.div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="flex flex-wrap justify-center gap-8">
                         {TEAM.map((member, i) => (
                             <motion.div
                                 key={i}
@@ -147,7 +163,7 @@ export default function About() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                                className="group relative"
+                                className="group relative w-full md:w-[calc(50%-2rem)] lg:w-[calc(30%-2rem)] max-w-sm"
                             >
                                 <div className="aspect-[3/4] overflow-hidden rounded-2xl mb-6 bg-zinc-900 border border-white/5 relative">
                                     <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/10 transition-colors z-10" />
@@ -159,12 +175,17 @@ export default function About() {
 
                                     {/* Social Overlay */}
                                     <div className="absolute bottom-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300 z-20">
-                                        <button className="p-2 bg-black/80 backdrop-blur text-white rounded-full hover:bg-accent transition-colors">
-                                            <Linkedin className="w-4 h-4" />
-                                        </button>
-                                        <button className="p-2 bg-black/80 backdrop-blur text-white rounded-full hover:bg-accent transition-colors">
-                                            <Mail className="w-4 h-4" />
-                                        </button>
+                                        {member.links && member.links.map((link, idx) => (
+                                            <a
+                                                key={idx}
+                                                href={link.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="p-2 bg-black/80 backdrop-blur text-white rounded-full hover:bg-accent transition-colors"
+                                            >
+                                                <link.icon className="w-4 h-4" />
+                                            </a>
+                                        ))}
                                     </div>
                                 </div>
 

@@ -53,7 +53,7 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row justify-between items-center border-t border-white/5 dark:border-white/5 border-black/5 pt-12 text-[10px] font-bold tracking-[0.3em] uppercase text-slate-700 dark:text-slate-700">
                 <div>© 2026 ASIMOVX TECH GROUP</div>
                 <div className="flex gap-8 mt-6 md:mt-0">
-                    <a href="#" className="hover:text-black dark:hover:text-white transition-colors">{t('footer.privacy')}</a>
+                    <a href="/privacy-policy" className="hover:text-black dark:hover:text-white transition-colors">{t('footer.privacy')}</a>
                     <a href="#" className="hover:text-black dark:hover:text-white transition-colors">{t('footer.legal')}</a>
                     <a href="#" className="hover:text-black dark:hover:text-white transition-colors">{t('footer.cookies')}</a>
                 </div>
