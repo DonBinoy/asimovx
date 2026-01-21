@@ -8,15 +8,17 @@ import { notFound } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ApplicationForm from '@/components/ApplicationForm';
-import { JOBS } from '@/data/jobs';
+import { useLanguage } from '@/context/LanguageContext';
+import { translations } from '@/utils/translations';
 
 export default function JobDetails({ params }: { params: Promise<{ slug: string }> }) {
     // Determine unwrapping based on React/Next version type of params
     // In strict Next.js 15+, params is a Promise.
     const resolvedParams = use(params);
     const slug = resolvedParams.slug;
+    const { t, language } = useLanguage();
 
-    const job = JOBS.find(j => j.slug === slug);
+    const job = translations[language]?.jobs?.find(j => j.slug === slug);
     const [isApplicationOpen, setIsApplicationOpen] = React.useState(false);
 
     if (!job) {
@@ -41,7 +43,7 @@ export default function JobDetails({ params }: { params: Promise<{ slug: string 
                 >
                     <Link href="/careers" className="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors group">
                         <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-                        <span className="text-sm font-bold uppercase tracking-widest">Back to Careers</span>
+                        <span className="text-sm font-bold uppercase tracking-widest">{t('career_details.back_to_careers')}</span>
                     </Link>
                 </motion.div>
 
@@ -55,7 +57,7 @@ export default function JobDetails({ params }: { params: Promise<{ slug: string 
                     <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
                         <div>
                             <span className="text-xs font-bold tracking-[0.3em] uppercase text-accent mb-4 block">
-                                {job.type} Position
+                                {job.type}
                             </span>
                             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 text-foreground">
                                 {job.title}
@@ -77,7 +79,7 @@ export default function JobDetails({ params }: { params: Promise<{ slug: string 
                             onClick={() => setIsApplicationOpen(true)}
                             className="px-8 py-4 bg-white text-black rounded-full font-bold uppercase tracking-wider hover:bg-slate-200 transition-colors whitespace-nowrap"
                         >
-                            Apply Now
+                            {t('career_details.apply_now')}
                         </button>
                     </div>
                 </motion.div>
@@ -92,7 +94,7 @@ export default function JobDetails({ params }: { params: Promise<{ slug: string 
                     {/* Main Description */}
                     <div className="md:col-span-2 space-y-12">
                         <div className="prose prose-invert prose-lg max-w-none">
-                            <h3 className="text-2xl font-bold mb-4 text-white">About The Role</h3>
+                            <h3 className="text-2xl font-bold mb-4 text-white">{t('career_details.about_role')}</h3>
                             <p className="text-slate-400 font-light leading-relaxed">
                                 {job.fullDescription || job.description}
                             </p>
@@ -101,7 +103,7 @@ export default function JobDetails({ params }: { params: Promise<{ slug: string 
                         {/* Responsibilities */}
                         {job.responsibilities && (
                             <div>
-                                <h3 className="text-2xl font-bold mb-6 text-white">What You'll Do</h3>
+                                <h3 className="text-2xl font-bold mb-6 text-white">{t('career_details.what_you_do')}</h3>
                                 <ul className="space-y-4">
                                     {job.responsibilities.map((item, i) => (
                                         <li key={i} className="flex gap-4 items-start text-slate-400 font-light">
@@ -116,7 +118,7 @@ export default function JobDetails({ params }: { params: Promise<{ slug: string 
                         {/* Requirements */}
                         {job.requirements && (
                             <div>
-                                <h3 className="text-2xl font-bold mb-6 text-white">What We're Looking For</h3>
+                                <h3 className="text-2xl font-bold mb-6 text-white">{t('career_details.what_looking_for')}</h3>
                                 <ul className="space-y-4">
                                     {job.requirements.map((item, i) => (
                                         <li key={i} className="flex gap-4 items-start text-slate-400 font-light">
@@ -131,7 +133,7 @@ export default function JobDetails({ params }: { params: Promise<{ slug: string 
                         {/* Preferred Qualifications */}
                         {job.preferredQualifications && (
                             <div>
-                                <h3 className="text-2xl font-bold mb-6 text-white">Preferred Qualifications</h3>
+                                <h3 className="text-2xl font-bold mb-6 text-white">{t('career_details.preferred_qual')}</h3>
                                 <ul className="space-y-4">
                                     {job.preferredQualifications.map((item, i) => (
                                         <li key={i} className="flex gap-4 items-start text-slate-400 font-light">
@@ -147,7 +149,7 @@ export default function JobDetails({ params }: { params: Promise<{ slug: string 
                         {/* Benefits */}
                         {job.benefits && (
                             <div>
-                                <h3 className="text-2xl font-bold mb-6 text-white">Why Join Us?</h3>
+                                <h3 className="text-2xl font-bold mb-6 text-white">{t('career_details.why_join')}</h3>
                                 <ul className="space-y-4">
                                     {job.benefits.map((item, i) => (
                                         <li key={i} className="flex gap-4 items-start text-slate-400 font-light">
@@ -163,7 +165,7 @@ export default function JobDetails({ params }: { params: Promise<{ slug: string 
                     {/* Sidebar */}
                     <div className="md:col-span-1">
                         <div className="bg-card border border-border rounded-3xl p-8 sticky top-32">
-                            <h3 className="text-xl font-bold mb-6">Share this role</h3>
+                            <h3 className="text-xl font-bold mb-6">{t('career_details.share_role')}</h3>
                             <div className="flex gap-4 mb-8">
                                 <button className="p-3 bg-white/10 rounded-full hover:bg-accent transition-colors">
                                     <Share2 className="w-5 h-5" />
@@ -173,10 +175,10 @@ export default function JobDetails({ params }: { params: Promise<{ slug: string 
 
                             <hr className="border-white/10 mb-8" />
 
-                            <h4 className="font-bold mb-4">Department</h4>
-                            <p className="text-slate-400 mb-6">Engineering & AI</p>
+                            <h4 className="font-bold mb-4">{t('career_details.department')}</h4>
+                            <p className="text-slate-400 mb-6">{t('career_details.dept_name')}</p>
 
-                            <h4 className="font-bold mb-4">Contact</h4>
+                            <h4 className="font-bold mb-4">{t('career_details.contact_contact')}</h4>
                             <a href="mailto:careers@asimovx.com" className="text-accent hover:underline">careers@asimovx.com</a>
                         </div>
                     </div>

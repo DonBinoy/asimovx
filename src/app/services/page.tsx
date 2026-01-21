@@ -8,94 +8,96 @@ import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { ArrowRight, Brain, Eye, MessageSquare, Terminal, Monitor, Smartphone, ShoppingCart, Activity, Gamepad2, Settings, Users, BarChart } from 'lucide-react';
 
-const CORE_SERVICES = [
-    {
-        title: "Computer Vision",
-        description: "Our core expertise lies in crafting bespoke software solutions that harness the power of computer vision techniques to derive valuable insights from a diverse range of data sources, including images, videos, LiDAR data, and live streams.",
-        detail: "Through a fusion of cutting-edge deep learning algorithms and traditional computer vision approaches, we empower businesses to effortlessly detect, segment, and track objects, thereby unlocking crucial information and elevating the efficiency of their decision-making processes.",
-        icon: Eye,
-        color: "text-blue-400"
-    },
-    {
-        title: "Natural Language Processing",
-        description: "Leverage the potential of deep learning to harness the power of natural language processing pipelines and derive valuable meaning and insights from unstructured text.",
-        detail: "",
-        icon: MessageSquare,
-        color: "text-green-400"
-    },
-    {
-        title: "Generative AI",
-        description: "Unlock the full potential of your business by embracing state-of-the-art generative AI solutions customized to your unique requirements. Our team of skilled machine learning engineers and scientists is poised to assist you in developing groundbreaking, high-performance solutions and seamlessly integrating generative AI into your business operations and products.",
-        detail: "Whether it’s tailoring natural language processing to your needs, harnessing the capabilities of computer vision, or exploring the realms of reinforcement learning, our seasoned professionals are committed to guiding you through the intricate landscape of generative AI, enabling you to seize its limitless possibilities",
-        icon: Brain,
-        color: "text-purple-400"
-    }
-];
-
-const GENERAL_SERVICES = [
-    {
-        title: "Technology & Software",
-        description: "Our innovative solutions have helped technology companies re-imagine the way they operate.",
-        icon: Terminal
-    },
-    {
-        title: "Sports Tech",
-        description: "We bring state-of-the-art technologies to sports with tracking, activity recognition, pose estimation and more.",
-        icon: Activity
-    },
-    {
-        title: "Automotives",
-        description: "With solutions ranging from multi-camera object tracking to behavior identification and process optimization.",
-        icon: Settings
-    },
-    {
-        title: "Manufacturing/Agro",
-        description: "We have implemented solutions ranging from computer vision tools for food manufacturers to real-time sensor analysis on production lines.",
-        icon: BarChart
-    },
-    {
-        title: "Marketing",
-        description: "Whether it’s on the demand or supply side, we help companies make the most of impression- and user-level data to optimize their advertising efforts.",
-        icon: Users
-    },
-    {
-        title: "Healthcare & Pharma",
-        description: "We build solutions to make pharmaceuticals safer and more effective through machine learning based approaches for detecting prescription fraud, personalizing healthcare provider outreach, and researching the next wave of therapeutics.",
-        icon: Activity
-    },
-    {
-        title: "Gaming",
-        description: "Finding a way to engage players in this high-paced, competitive environment is a major challenge. We help companies personalize promotions and incentives to maximize customer engagement through effective reinvestment.",
-        icon: Gamepad2
-    },
-    {
-        title: "Build A Future-Ready AI Workforce",
-        description: "Empower your team to seamlessly integrate AI into their daily workflows by providing customized training designed to address your specific requirements. Our training programs will equip your team with the necessary skills and knowledge to thrive and achieve success in leveraging AI technologies.",
-        icon: Users
-    },
-    {
-        title: "Business Transformation",
-        description: "At AsimovX, we specialize in digital business transformation, empowering companies to harness the power of technology and innovation to stay ahead in a rapidly evolving market. Our expert team collaborates with you to reimagine your business processes, enhance customer experiences, and streamline operations.",
-        icon: BarChart
-    },
-    {
-        title: "Web Application Design & Development",
-        description: "Web applications are essential tools for modern businesses, offering dynamic and interactive experiences for users. At Asimovx, we specialize in comprehensive web application development and design services tailored to meet your specific needs.",
-        icon: Monitor
-    },
-    {
-        title: "Mobile Development",
-        description: "Mobile applications are an excellent way to reach an audience that is already aware of and interested in your brand, as well as to attract new customers through easy access on their phones. Asimovx manages every aspect of the development process.",
-        icon: Smartphone
-    },
-    {
-        title: "e-Commerce Website",
-        description: "E-commerce websites are a powerful tool for engaging existing customers and attracting new ones through convenient online access. Asimovx oversees every phase of the development process for its clients’ e-commerce platforms.",
-        icon: ShoppingCart
-    }
-];
-
 export default function Services() {
+    const { t } = useLanguage();
+
+    const CORE_SERVICES = [
+        {
+            title: t('services_page.core.vision.title'),
+            description: t('services_page.core.vision.desc'),
+            detail: t('services_page.core.vision.detail'),
+            icon: Eye,
+            color: "text-blue-400"
+        },
+        {
+            title: t('services_page.core.nlp.title'),
+            description: t('services_page.core.nlp.desc'),
+            detail: "",
+            icon: MessageSquare,
+            color: "text-green-400"
+        },
+        {
+            title: t('services_page.core.genai.title'),
+            description: t('services_page.core.genai.desc'),
+            detail: t('services_page.core.genai.detail'),
+            icon: Brain,
+            color: "text-purple-400"
+        }
+    ];
+
+    const GENERAL_SERVICES = [
+        {
+            title: t('services_page.general.tech.title'),
+            description: t('services_page.general.tech.desc'),
+            icon: Terminal
+        },
+        {
+            title: t('services_page.general.sports.title'),
+            description: t('services_page.general.sports.desc'),
+            icon: Activity
+        },
+        {
+            title: t('services_page.general.auto.title'),
+            description: t('services_page.general.auto.desc'),
+            icon: Settings
+        },
+        {
+            title: t('services_page.general.manu.title'),
+            description: t('services_page.general.manu.desc'),
+            icon: BarChart
+        },
+        {
+            title: t('services_page.general.marketing.title'),
+            description: t('services_page.general.marketing.desc'),
+            icon: Users
+        },
+        {
+            title: t('services_page.general.health.title'),
+            description: t('services_page.general.health.desc'),
+            icon: Activity
+        },
+        {
+            title: t('services_page.general.gaming.title'),
+            description: t('services_page.general.gaming.desc'),
+            icon: Gamepad2
+        },
+        {
+            title: t('services_page.general.workforce.title'),
+            description: t('services_page.general.workforce.desc'),
+            icon: Users
+        },
+        {
+            title: t('services_page.general.transformation.title'),
+            description: t('services_page.general.transformation.desc'),
+            icon: BarChart
+        },
+        {
+            title: t('services_page.general.web.title'),
+            description: t('services_page.general.web.desc'),
+            icon: Monitor
+        },
+        {
+            title: t('services_page.general.mobile.title'),
+            description: t('services_page.general.mobile.desc'),
+            icon: Smartphone
+        },
+        {
+            title: t('services_page.general.ecom.title'),
+            description: t('services_page.general.ecom.desc'),
+            icon: ShoppingCart
+        }
+    ];
+
     return (
         <main className="min-h-screen bg-background text-foreground selection:bg-accent selection:text-background">
             <Navbar />
@@ -108,14 +110,14 @@ export default function Services() {
                     transition={{ duration: 0.8 }}
                     className="max-w-5xl"
                 >
-                    <span className="text-accent text-sm font-bold tracking-[0.3em] uppercase block mb-6">What We Do</span>
+                    <span className="text-accent text-sm font-bold tracking-[0.3em] uppercase block mb-6">{t('services_page.tagline')}</span>
                     <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 text-white leading-tight">
-                        Solving <span className="text-accent">Real-World</span> <br />
-                        Business Problems <br />
-                        With <span className="text-accent">AI Based</span> Consulting.
+                        {t('services_page.title_1')} <span className="text-accent">{t('services_page.title_2')}</span> <br />
+                        {t('services_page.title_3')} <br />
+                        {t('services_page.title_4')} <span className="text-accent">{t('services_page.title_5')}</span> {t('services_page.title_6')}
                     </h1>
                     <p className="text-xl text-slate-400 font-light leading-relaxed mb-12 max-w-3xl">
-                        Our team of experienced AI consultants will work closely with you to identify the right artificial intelligence technologies, tools, and strategies that will help you streamline your business operations, improve customer engagement, and maximize profitability, everything from NLP/Computer Vision to Generative AI.
+                        {t('services_page.description')}
                     </p>
                 </motion.div>
             </section>
@@ -147,7 +149,7 @@ export default function Services() {
                                 )}
                                 <Link href="/#contact">
                                     <button className="px-8 py-4 mt-4 bg-white/10 hover:bg-accent text-white rounded-full font-bold uppercase tracking-wider transition-all flex items-center gap-2 group">
-                                        Contact Us
+                                        {t('services_page.contact_btn')}
                                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                                     </button>
                                 </Link>
@@ -166,9 +168,9 @@ export default function Services() {
             {/* General Services Grid */}
             <section className="py-32 px-6 md:px-24">
                 <div className="mb-20 text-center max-w-3xl mx-auto">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Services</h2>
+                    <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">{t('services_page.services_header')}</h2>
                     <p className="text-xl text-slate-400">
-                        We can help organizations of all sizes and industries design, build and deploy state-of-the-art machine learning solutions.
+                        {t('services_page.services_desc')}
                     </p>
                 </div>
 

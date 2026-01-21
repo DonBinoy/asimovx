@@ -5,29 +5,32 @@ import { motion } from 'framer-motion';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Mail, MapPin, Phone, Send, Loader2, Linkedin, CheckCircle } from 'lucide-react';
-
-const LOCATIONS = [
-    {
-        country: "Sweden",
-        address: ["Asimovx Technologies AB", "Sockenvägen 6A,", "Trelleborg 23134 Sweden"],
-        email: "vinil.valsan@asimovx.se",
-        phones: ["+46 722122262", "+46 733205536"]
-    },
-    {
-        country: "Spain",
-        address: ["Calle de Sequillo 20", "Madrid", "Spain 28017"],
-        email: "liju.ps@asimovx.se",
-        phones: ["+34634266903"]
-    },
-    {
-        country: "Latvia",
-        address: ["Burtnieku iela 1", "Riga,", "Latvia, LV-1006"],
-        email: "liju.ps@asimovx.se",
-        phones: ["+371 22477016"]
-    }
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Contact() {
+    const { t } = useLanguage();
+
+    const LOCATIONS = [
+        {
+            country: t('contact_page.locations.sweden'),
+            address: ["Asimovx Technologies AB", "Snövits väg 64D,", "Trelleborg 231 32 Sweden"],
+            email: "vinil.valsan@asimovx.se",
+            phones: ["+46 722122262", "+46 733205536"]
+        },
+        {
+            country: t('contact_page.locations.spain'),
+            address: ["Calle de Sequillo 20", "Madrid", "Spain 28017"],
+            email: "liju.ps@asimovx.se",
+            phones: ["+34634266903"]
+        },
+        {
+            country: t('contact_page.locations.latvia'),
+            address: ["Burtnieku iela 1", "Riga,", "Latvia, LV-1006"],
+            email: "liju.ps@asimovx.se",
+            phones: ["+371 22477016"]
+        }
+    ];
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -59,12 +62,12 @@ export default function Contact() {
                     transition={{ duration: 0.8 }}
                     className="mb-16"
                 >
-                    <span className="text-accent text-sm font-bold tracking-[0.3em] uppercase block mb-4">Contact Us</span>
+                    <span className="text-accent text-sm font-bold tracking-[0.3em] uppercase block mb-4">{t('contact_page.tagline')}</span>
                     <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-foreground mb-6">
-                        How can we <span className="text-accent">help you?</span>
+                        {t('contact_page.title')}
                     </h1>
                     <p className="text-xl text-slate-500 dark:text-slate-400 font-light max-w-2xl">
-                        Get Free Quotes Now. Use the form below or reach out to our offices directly.
+                        {t('contact_page.blurb')}
                     </p>
                 </motion.div>
 
@@ -107,7 +110,7 @@ export default function Contact() {
                         </div>
 
                         <div className="pt-8 border-t border-white/10">
-                            <h4 className="text-sm font-bold tracking-widest uppercase text-slate-500 mb-4">Social Media</h4>
+                            <h4 className="text-sm font-bold tracking-widest uppercase text-slate-500 mb-4">{t('contact_page.social_title')}</h4>
                             <a href="https://www.linkedin.com/company/asimovx-technologies-ab" className="inline-flex items-center gap-2 text-white hover:text-accent transition-colors font-medium">
                                 <Linkedin className="w-5 h-5" />
                                 LinkedIn
@@ -122,28 +125,28 @@ export default function Contact() {
                         transition={{ duration: 0.8, delay: 0.4 }}
                     >
                         <div className="bg-zinc-900/50 border border-white/10 rounded-3xl p-8 md:p-10">
-                            <h3 className="text-2xl font-bold text-white mb-2">Write to us..</h3>
+                            <h3 className="text-2xl font-bold text-white mb-2">{t('contact_page.form.title')}</h3>
                             <p className="text-slate-400 mb-8 text-sm">
-                                If you have an Innovative Idea on how we can Improve. We are all ears!
+                                {t('contact_page.form.subtitle')}
                             </p>
 
                             {isSuccess ? (
                                 <div className="text-center py-12 bg-green-500/10 rounded-2xl border border-green-500/20">
                                     <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
-                                    <h3 className="text-xl font-bold text-white mb-2">Message Sent!</h3>
-                                    <p className="text-slate-400">We'll get back to you shortly.</p>
+                                    <h3 className="text-xl font-bold text-white mb-2">{t('contact_page.form.success_title')}</h3>
+                                    <p className="text-slate-400">{t('contact_page.form.success_msg')}</p>
                                     <button
                                         onClick={() => setIsSuccess(false)}
                                         className="mt-6 px-6 py-2 bg-white/10 hover:bg-white/20 text-white rounded-full text-sm font-medium transition-colors"
                                     >
-                                        Send another
+                                        {t('contact_page.form.btn_another')}
                                     </button>
                                 </div>
                             ) : (
                                 <form onSubmit={handleSubmit} className="space-y-6">
                                     <div>
                                         <label className="block text-sm font-medium text-slate-300 mb-2">
-                                            Name <span className="text-red-500">*</span>
+                                            {t('contact_page.form.name')} <span className="text-red-500">*</span>
                                         </label>
                                         <input
                                             type="text"
@@ -151,13 +154,13 @@ export default function Contact() {
                                             value={formData.name}
                                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                             className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors placeholder:text-slate-600"
-                                            placeholder="Enter your first name"
+                                            placeholder={t('contact_page.form.name')}
                                         />
                                     </div>
 
                                     <div>
                                         <label className="block text-sm font-medium text-slate-300 mb-2">
-                                            Email <span className="text-red-500">*</span>
+                                            {t('contact_page.form.email')} <span className="text-red-500">*</span>
                                         </label>
                                         <input
                                             type="email"
@@ -165,33 +168,33 @@ export default function Contact() {
                                             value={formData.email}
                                             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                             className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors placeholder:text-slate-600"
-                                            placeholder="Enter your email"
+                                            placeholder={t('contact_page.form.email')}
                                         />
                                     </div>
 
                                     <div>
                                         <label className="block text-sm font-medium text-slate-300 mb-2">
-                                            Phone
+                                            {t('contact_page.form.phone')}
                                         </label>
                                         <input
                                             type="tel"
                                             value={formData.phone}
                                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                                             className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors placeholder:text-slate-600"
-                                            placeholder="Enter your phone"
+                                            placeholder={t('contact_page.form.phone')}
                                         />
                                     </div>
 
                                     <div>
                                         <label className="block text-sm font-medium text-slate-300 mb-2">
-                                            Message / Enquiry
+                                            {t('contact_page.form.message')}
                                         </label>
                                         <textarea
                                             rows={4}
                                             value={formData.message}
                                             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                                             className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors placeholder:text-slate-600 resize-none"
-                                            placeholder="Enter your message"
+                                            placeholder={t('contact_page.form.message')}
                                         />
                                     </div>
 
@@ -203,11 +206,11 @@ export default function Contact() {
                                         {isSubmitting ? (
                                             <>
                                                 <Loader2 className="w-5 h-5 animate-spin" />
-                                                Sending...
+                                                {t('contact_page.form.btn_sending')}
                                             </>
                                         ) : (
                                             <>
-                                                Send Message
+                                                {t('contact_page.form.btn_submit')}
                                                 <Send className="w-5 h-5" />
                                             </>
                                         )}

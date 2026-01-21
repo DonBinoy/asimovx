@@ -27,8 +27,8 @@ const Footer = () => {
                                 <h4 className="text-lg font-bold mb-3 text-accent">{t('footer.sweden')}</h4>
                                 <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
                                     Asimovx Technologies AB<br />
-                                    Sockenvägen 6A<br />
-                                    Trelleborg, 23134<br />
+                                    Snövits väg 64D<br />
+                                    Trelleborg, 231 32<br />
                                     {t('footer.sweden')}
                                 </p>
                                 <a href="tel:+46733205536" className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 hover:text-accent transition-colors mt-3">

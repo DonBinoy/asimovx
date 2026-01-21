@@ -1,3 +1,5 @@
+import { jobTranslations } from './jobTranslations';
+
 export const translations = {
     EN: {
         navbar: {
@@ -229,6 +231,120 @@ export const translations = {
             usage_text: "Our company is responsible for the content of this website. This website is designed for general information purposes only and it does not constitute legal or medical advice or the formation of a lawyer-client or physician-client relationship.",
             contact_title: "How to Contact Us",
             contact_text: "If you have any questions about this privacy policy, the practices of this site, or your dealings with this Web site, please visit our contact page."
+        },
+        contact_page: {
+            tagline: "Contact Us",
+            title: "How can we help you?",
+            blurb: "We are always here to help you with any questions or issues you may have. Feel free to reach out to us.",
+            locations: {
+                sweden: "Sweden",
+                spain: "Spain",
+                latvia: "Latvia"
+            },
+            form: {
+                title: "Write to us..",
+                subtitle: "We will get back to you as soon as possible",
+                name: "Name",
+                email: "Email",
+                phone: "Phone",
+                message: "Message",
+                btn_submit: "Send Message",
+                btn_sending: "Sending...",
+                success_title: "Message Sent!",
+                success_msg: "We'll get back to you shortly.",
+                btn_another: "Send Another Message"
+            },
+            social_title: "Follow us"
+        },
+        services_page: {
+            tagline: "What We Do",
+            title_1: "Solving",
+            title_2: "Real-World",
+            title_3: "Business Problems",
+            title_4: "With",
+            title_5: "AI Based",
+            title_6: "Consulting.",
+            description: "Our team of experienced AI consultants will work closely with you to identify the right artificial intelligence technologies, tools, and strategies that will help you streamline your business operations, improve customer engagement, and maximize profitability, everything from NLP/Computer Vision to Generative AI.",
+            contact_btn: "Contact Us",
+            services_header: "Services",
+            services_desc: "We can help organizations of all sizes and industries design, build and deploy state-of-the-art machine learning solutions.",
+            core: {
+                vision: {
+                    title: "Computer Vision",
+                    desc: "Our core expertise lies in crafting bespoke software solutions that harness the power of computer vision techniques to derive valuable insights from a diverse range of data sources, including images, videos, LiDAR data, and live streams.",
+                    detail: "Through a fusion of cutting-edge deep learning algorithms and traditional computer vision approaches, we empower businesses to effortlessly detect, segment, and track objects, thereby unlocking crucial information and elevating the efficiency of their decision-making processes."
+                },
+                nlp: {
+                    title: "Natural Language Processing",
+                    desc: "Leverage the potential of deep learning to harness the power of natural language processing pipelines and derive valuable meaning and insights from unstructured text."
+                },
+                genai: {
+                    title: "Generative AI",
+                    desc: "Unlock the full potential of your business by embracing state-of-the-art generative AI solutions customized to your unique requirements. Our team of skilled machine learning engineers and scientists is poised to assist you in developing groundbreaking, high-performance solutions and seamlessly integrating generative AI into your business operations and products.",
+                    detail: "Whether it’s tailoring natural language processing to your needs, harnessing the capabilities of computer vision, or exploring the realms of reinforcement learning, our seasoned professionals are committed to guiding you through the intricate landscape of generative AI, enabling you to seize its limitless possibilities"
+                }
+            },
+            general: {
+                tech: { title: "Technology & Software", desc: "Our innovative solutions have helped technology companies re-imagine the way they operate." },
+                sports: { title: "Sports Tech", desc: "We bring state-of-the-art technologies to sports with tracking, activity recognition, pose estimation and more." },
+                auto: { title: "Automotives", desc: "With solutions ranging from multi-camera object tracking to behavior identification and process optimization." },
+                manu: { title: "Manufacturing/Agro", desc: "We have implemented solutions ranging from computer vision tools for food manufacturers to real-time sensor analysis on production lines." },
+                marketing: { title: "Marketing", desc: "Whether it’s on the demand or supply side, we help companies make the most of impression- and user-level data to optimize their advertising efforts." },
+                health: { title: "Healthcare & Pharma", desc: "We build solutions to make pharmaceuticals safer and more effective through machine learning based approaches for detecting prescription fraud, personalizing healthcare provider outreach, and researching the next wave of therapeutics." },
+                gaming: { title: "Gaming", desc: "Finding a way to engage players in this high-paced, competitive environment is a major challenge. We help companies personalize promotions and incentives to maximize customer engagement through effective reinvestment." },
+                workforce: { title: "Build A Future-Ready AI Workforce", desc: "Empower your team to seamlessly integrate AI into their daily workflows by providing customized training designed to address your specific requirements. Our training programs will equip your team with the necessary skills and knowledge to thrive and achieve success in leveraging AI technologies." },
+                transformation: { title: "Business Transformation", desc: "At AsimovX, we specialize in digital business transformation, empowering companies to harness the power of technology and innovation to stay ahead in a rapidly evolving market. Our expert team collaborates with you to reimagine your business processes, enhance customer experiences, and streamline operations." },
+                web: { title: "Web Application Design & Development", desc: "Web applications are essential tools for modern businesses, offering dynamic and interactive experiences for users. At Asimovx, we specialize in comprehensive web application development and design services tailored to meet your specific needs." },
+                mobile: { title: "Mobile Development", desc: "Mobile applications are an excellent way to reach an audience that is already aware of and interested in your brand, as well as to attract new customers through easy access on their phones. Asimovx manages every aspect of the development process." },
+                ecom: { title: "e-Commerce Website", desc: "E-commerce websites are a powerful tool for engaging existing customers and attracting new ones through convenient online access. Asimovx oversees every phase of the development process for its clients’ e-commerce platforms." }
+            }
+        },
+        portfolio_page: {
+            tagline: "Our Work",
+            title: "Selected Projects.",
+            description: "A showcase of our pioneering work in artificial intelligence, robotics, and immersive digital experiences.",
+            view_case_study: "View Case Study",
+            projects: {
+                p4dots: { title: "4dots", category: "Custom Customization & Printing", desc: "A comprehensive customization and printing service offering personalized letterheads, booklets, and canvas prints." },
+                kontrast: { title: "Kontrast", category: "Restaurant & Hospitality", desc: "A premium Northern Indian dining experience in Malmö, Sweden, featuring authentic Punjabi cuisine." },
+                secondskin_b2b: { title: "SecondskinStyle B2B", category: "E-Commerce & Sportswear", desc: "Performance-driven sportswear engineered for athletes, emphasizing technical design and sustainable manufacturing." },
+                secondskin: { title: "SecondskinStyle", category: "Consumer Sportswear", desc: "Premium athletic apparel brand focused on comfort, durability, and style for the modern athlete." },
+                pipetechs: { title: "PipeTechs", category: "Pipeline Technology", desc: "Advanced pipeline leak detection systems using acoustic technology for liquid, gas, and sub-sea applications." },
+                growers: { title: "Growers Direct", category: "Agriculture & Retail", desc: "Family-run nursery offering a wide range of plants, pottery, and expert gardening advice." },
+                timax: { title: "Timax-NL", category: "Construction Consulting", desc: "Dutch consulting firm specializing in building regulations, energy performance, and sustainable construction." },
+                sicci: { title: "Sicci", category: "Chamber of Commerce", desc: "Singapore Indian Chamber of Commerce and Industry, supporting business growth and advocacy since 1924." },
+                icai: { title: "I C A I", category: "Professional Organization", desc: "Singapore Chapter of the Institute of Chartered Accountants of India, fostering professional development." },
+                chets: { title: "Chet's Shoes", category: "E-Commerce & Retail", desc: "Family-owned footwear business offering premium work boots, safety shoes, and personalized service since 1947." },
+                finance: { title: "Personal Finance Sweden", category: "Financial Education", desc: "Empowering expats and NRIs in Sweden with knowledge on investing, taxes, and family finance." }
+            }
+        },
+        careers_page: {
+            tagline: "Join Us",
+            title: "Build The Future.",
+            description: "We are looking for passionate individuals to join our team of innovators, engineers, and problem solvers.",
+            search_placeholder: "Search roles...",
+            filters: {
+                all: "All",
+                full_time: "Full-time",
+                internship: "Internship"
+            },
+            details: "Details",
+            no_positions: "No positions found matching your criteria.",
+            clear_filters: "Clear filters"
+        },
+        jobs: jobTranslations.EN,
+        career_details: {
+            back_to_careers: "Back to Careers",
+            apply_now: "Apply Now",
+            share_role: "Share this role",
+            department: "Department",
+            dept_name: "Engineering & AI",
+            contact_contact: "Contact",
+            about_role: "About The Role",
+            what_you_do: "What You'll Do",
+            what_looking_for: "What We're Looking For",
+            preferred_qual: "Preferred Qualifications",
+            why_join: "Why Join Us?"
         }
     },
     ES: {
@@ -461,6 +577,120 @@ export const translations = {
             usage_text: "Nuestra empresa es responsable del contenido de este sitio web. Este sitio web está diseñado solo para fines de información general y no constituye asesoramiento legal o médico ni la formación de una relación abogado-cliente o médico-paciente.",
             contact_title: "Cómo Contactarnos",
             contact_text: "Si tiene alguna pregunta sobre esta política de privacidad, las prácticas de este sitio o sus tratos con este sitio web, visite nuestra página de contacto."
+        },
+        contact_page: {
+            tagline: "Contáctenos",
+            title: "¿Cómo podemos ayudarle?",
+            blurb: "Siempre estamos aquí para ayudarle con cualquier pregunta o problema que pueda tener. No dude en comunicarse con nosotros.",
+            locations: {
+                sweden: "Suecia",
+                spain: "España",
+                latvia: "Letonia"
+            },
+            form: {
+                title: "Escríbanos..",
+                subtitle: "Le responderemos lo antes posible",
+                name: "Nombre",
+                email: "Correo electrónico",
+                phone: "Teléfono",
+                message: "Mensaje",
+                btn_submit: "Enviar Mensaje",
+                btn_sending: "Enviando...",
+                success_title: "¡Mensaje Enviado!",
+                success_msg: "Nos pondremos en contacto con usted en breve.",
+                btn_another: "Enviar Otro Mensaje"
+            },
+            social_title: "Síguenos"
+        },
+        services_page: {
+            tagline: "Lo que hacemos",
+            title_1: "Soluciones",
+            title_2: "Reales para",
+            title_3: "Problemas de Negocio",
+            title_4: "Con",
+            title_5: "Consultoría de",
+            title_6: "IA.",
+            description: "Nuestro equipo de consultores expertos en IA trabajará estrechamente con usted para identificar las tecnologías, herramientas y estrategias adecuadas que le ayudarán a optimizar sus operaciones y maximizar la rentabilidad.",
+            contact_btn: "Contáctenos",
+            services_header: "Servicios",
+            services_desc: "Podemos ayudar a organizaciones de todos los tamaños e industrias a diseñar, construir e implementar soluciones de aprendizaje automático de última generación.",
+            core: {
+                vision: {
+                    title: "Visión por Computadora",
+                    desc: "Nuestra experiencia principal radica en crear soluciones de software a medida que aprovechan el poder de las técnicas de visión por computadora para obtener información valiosa de imágenes, videos y transmisiones en vivo.",
+                    detail: "A través de una fusión de algoritmos de aprendizaje profundo de vanguardia y enfoques tradicionales de visión por computadora, capacitamos a las empresas para detectar, segmentar y rastrear objetos sin esfuerzo."
+                },
+                nlp: {
+                    title: "Procesamiento de Lenguaje Natural",
+                    desc: "Aproveche el potencial del aprendizaje profundo para utilizar el poder de las tuberías de procesamiento de lenguaje natural y obtener un significado valioso de textos no estructurados."
+                },
+                genai: {
+                    title: "IA Generativa",
+                    desc: "Desbloquee todo el potencial de su negocio adoptando soluciones de IA generativa de vanguardia personalizadas para sus requisitos únicos.",
+                    detail: "Ya sea adaptando el procesamiento de lenguaje natural a sus necesidades, aprovechando las capacidades de la visión por computadora o explorando los reinos del aprendizaje por refuerzo."
+                }
+            },
+            general: {
+                tech: { title: "Tecnología y Software", desc: "Nuestras soluciones innovadoras han ayudado a las empresas de tecnología a reinventar la forma en que operan." },
+                sports: { title: "Tecnología Deportiva", desc: "Llevamos tecnologías de última generación a los deportes con seguimiento, reconocimiento de actividades, estimación de poses y más." },
+                auto: { title: "Automotriz", desc: "Con soluciones que van desde el seguimiento de objetos con múltiples cámaras hasta la identificación de comportamientos y la optimización de procesos." },
+                manu: { title: "Manufactura/Agro", desc: "Hemos implementado soluciones que van desde herramientas de visión por computadora para fabricantes de alimentos hasta análisis de sensores en tiempo real." },
+                marketing: { title: "Marketing", desc: "Ya sea en el lado de la demanda o de la oferta, ayudamos a las empresas a aprovechar al máximo los datos a nivel de usuario." },
+                health: { title: "Salud y Farmacia", desc: "Construimos soluciones para hacer que los productos farmacéuticos sean más seguros y efectivos a través de enfoques basados en aprendizaje automático." },
+                gaming: { title: "Juegos", desc: "Encontrar una manera de involucrar a los jugadores en este entorno competitivo y de ritmo rápido es un desafío importante." },
+                workforce: { title: "Fuerza Laboral de IA", desc: "Empodere a su equipo para integrar perfectamente la IA en sus flujos de trabajo diarios proporcionando capacitación personalizada." },
+                transformation: { title: "Transformación Empresarial", desc: "Nos especializamos en la transformación empresarial digital, empoderando a las empresas para aprovechar el poder de la tecnología." },
+                web: { title: "Diseño y Desarrollo Web", desc: "Las aplicaciones web son herramientas esenciales para las empresas modernas, ofreciendo experiencias dinámicas e interactivas." },
+                mobile: { title: "Desarrollo Móvil", desc: "Las aplicaciones móviles son una excelente manera de llegar a una audiencia que ya conoce su marca." },
+                ecom: { title: "Comercio Electrónico", desc: "Los sitios web de comercio electrónico son una herramienta poderosa para involucrar a los clientes existentes y atraer nuevos." }
+            }
+        },
+        portfolio_page: {
+            tagline: "Nuestro Trabajo",
+            title: "Proyectos Seleccionados.",
+            description: "Una muestra de nuestro trabajo pionero en inteligencia artificial, robótica y experiencias digitales inmersivas.",
+            view_case_study: "Visitar Sítio",
+            projects: {
+                p4dots: { title: "4dots", category: "Personalización y Impresión", desc: "Un servicio integral de personalización e impresión que ofrece membretes, folletos y lienzos personalizados." },
+                kontrast: { title: "Kontrast", category: "Restaurante y Hospitalidad", desc: "Una experiencia gastronómica premium del norte de la India en Malmö, Suecia." },
+                secondskin_b2b: { title: "SecondskinStyle B2B", category: "E-Commerce y Ropa Deportiva", desc: "Ropa deportiva impulsada por el rendimiento diseñada para atletas, enfatizando el diseño técnico." },
+                secondskin: { title: "SecondskinStyle", category: "Ropa Deportiva de Consumo", desc: "Marca de ropa deportiva premium centrada en la comodidad, la durabilidad y el estilo." },
+                pipetechs: { title: "PipeTechs", category: "Tecnología de Tuberías", desc: "Sistemas avanzados de detección de fugas en tuberías utilizando tecnología acústica." },
+                growers: { title: "Growers Direct", category: "Agricultura y Venta Minorista", desc: "Vivero familiar que ofrece una amplia gama de plantas, cerámica y consejos de jardinería." },
+                timax: { title: "Timax-NL", category: "Consultoría de Construcción", desc: "Consultora holandesa especializada en normativas de construcción y rendimiento energético." },
+                sicci: { title: "Sicci", category: "Cámara de Comercio", desc: "Cámara de Comercio e Industria India de Singapur, apoyando el crecimiento empresarial." },
+                icai: { title: "I C A I", category: "Organización Profesional", desc: "Capítulo de Singapur del Instituto de Contadores Públicos de la India." },
+                chets: { title: "Chet's Shoes", category: "E-Commerce y Venta Minorista", desc: "Empresa familiar de calzado que ofrece botas de trabajo premium y zapatos de seguridad." },
+                finance: { title: "Finanzas Personales Suecia", category: "Educación Financiera", desc: "Empoderando a expatriados y NRI en Suecia con conocimientos sobre inversiones e impuestos." }
+            }
+        },
+        careers_page: {
+            tagline: "Únete a Nosotros",
+            title: "Construye el Futuro.",
+            description: "Buscamos personas apasionadas para unirse a nuestro equipo de innovadores, ingenieros y solucionadores de problemas.",
+            search_placeholder: "Buscar roles...",
+            filters: {
+                all: "Todos",
+                full_time: "Tiempo completo",
+                internship: "Pasantía"
+            },
+            details: "Detalles",
+            no_positions: "No se encontraron posiciones que coincidan con sus criterios.",
+            clear_filters: "Borrar filtros"
+        },
+        jobs: jobTranslations.ES,
+        career_details: {
+            back_to_careers: "Volver a Carreras",
+            apply_now: "Aplicar Ahora",
+            share_role: "Compartir este puesto",
+            department: "Departamento",
+            dept_name: "Ingeniería e IA",
+            contact_contact: "Contacto",
+            about_role: "Sobre el Rol",
+            what_you_do: "Lo que harás",
+            what_looking_for: "Lo que buscamos",
+            preferred_qual: "Cualificaciones Preferidas",
+            why_join: "¿Por qué unirse a nosotros?"
         }
     },
     SV: {
@@ -693,6 +923,120 @@ export const translations = {
             usage_text: "Vårt företag är ansvarigt för innehållet på denna webbplats. Denna webbplats är endast utformad för allmänna informationsändamål och den utgör inte juridisk eller medicinsk rådgivning eller bildandet av en advokat-klient eller läkare-klient relation.",
             contact_title: "Så här kontaktar du oss",
             contact_text: "Om du har några frågor om denna integritetspolicy, praxis på den här webbplatsen eller din hantering av denna webbplats, besök vår kontaktsida."
+        },
+        contact_page: {
+            tagline: "Kontakta Oss",
+            title: "Hur kan vi hjälpa dig?",
+            blurb: "Vi finns alltid här för att hjälpa dig med eventuella frågor eller problem du kan ha. Tveka inte att höra av dig.",
+            locations: {
+                sweden: "Sverige",
+                spain: "Spanien",
+                latvia: "Lettland"
+            },
+            form: {
+                title: "Skriv till oss..",
+                subtitle: "Vi återkommer till dig så snart som möjligt",
+                name: "Namn",
+                email: "E-post",
+                phone: "Telefon",
+                message: "Meddelande",
+                btn_submit: "Skicka Meddelande",
+                btn_sending: "Skickar...",
+                success_title: "Meddelande Skickat!",
+                success_msg: "Vi återkommer till dig inom kort.",
+                btn_another: "Skicka Ett Annat Meddelande"
+            },
+            social_title: "Följ oss"
+        },
+        services_page: {
+            tagline: "Vad Vi Gör",
+            title_1: "Löser",
+            title_2: "Verkliga",
+            title_3: "Affärsproblem",
+            title_4: "Med",
+            title_5: "AI-baserad",
+            title_6: "Konsulting.",
+            description: "Vårt team av erfarna AI-konsulter kommer att arbeta nära dig för att identifiera rätt artificiell intelligens-teknologier, verktyg och strategier som hjälper dig att effektivisera din verksamhet.",
+            contact_btn: "Kontakta Oss",
+            services_header: "Tjänster",
+            services_desc: "Vi kan hjälpa organisationer av alla storlekar och branscher att designa, bygga och implementera toppmoderna maskininlärningslösningar.",
+            core: {
+                vision: {
+                    title: "Datorseende",
+                    desc: "Vår kärnkompetens ligger i att skapa skräddarsydda mjukvarulösningar som utnyttjar kraften i datorseende-tekniker för att få värdefulla insikter från bilder, videor och liveströmmar.",
+                    detail: "Genom en sammanslagning av banbrytande djupinlärningsalgoritmer och traditionella datorseende-metoder ger vi företag möjlighet att enkelt upptäcka, segmentera och spåra objekt."
+                },
+                nlp: {
+                    title: "Naturlig Språkbehandling",
+                    desc: "Utnyttja potentialen i djupinlärning för att använda kraften i pipelines för bearbetning av naturligt språk och få värdefull mening från ostrukturerad text."
+                },
+                genai: {
+                    title: "Generativ AI",
+                    desc: "Utveckla banbrytande, högpresterande lösningar anpassade efter dina unika behov. Lås upp den fulla potentialen i ditt företag genom att omfamna toppmoderna generativa AI-lösningar.",
+                    detail: "Oavsett om det handlar om att skräddarsy naturlig språkbehandling efter dina behov eller att utnyttja kapaciteten hos datorseende."
+                }
+            },
+            general: {
+                tech: { title: "Teknik och Programvara", desc: "Våra innovativa lösningar har hjälpt teknikföretag att ombilda hur de arbetar." },
+                sports: { title: "Sportteknik", desc: "Vi tar med toppmodern teknik till sport med spårning, aktivitetsigenkänning, pose-estimering och mer." },
+                auto: { title: "Fordon", desc: "Med lösningar som sträcker sig från objektspårning med flera kameror till beteendeidentifiering och processoptimering." },
+                manu: { title: "Tillverkning/Agro", desc: "Vi har implementerat lösningar som sträcker sig från datorseendeverktyg för livsmedelsföretag till analys i realtid." },
+                marketing: { title: "Marknadsföring", desc: "Oavsett om det är på efterfråge- eller utbudssidan hjälper vi företag att få ut det mesta av data på användarnivå." },
+                health: { title: "Hälso- och Sjukvård", desc: "Vi bygger lösningar för att göra läkemedel säkrare och effektivare genom maskininlärningsbaserade metoder." },
+                gaming: { title: "Spel", desc: "Att hitta ett sätt att engagera spelare i denna snabba, konkurrenskraftiga miljö är en stor utmaning." },
+                workforce: { title: "AI-arbetsstyrka", desc: "Stärk ditt team att sömlöst integrera AI i sina dagliga arbetsflöden genom att tillhandahålla anpassad utbildning." },
+                transformation: { title: "Affärstransformation", desc: "Vi specialiserar oss på digital affärstransformation och ger företag möjlighet att utnyttja kraften i teknik." },
+                web: { title: "Webbappdesign", desc: "Webbapplikationer är viktiga verktyg för moderna företag och erbjuder dynamiska och interaktiva upplevelser." },
+                mobile: { title: "Mobilutveckling", desc: "Mobilapplikationer är ett utmärkt sätt att nå en publik som redan är medveten om ditt varumärke." },
+                ecom: { title: "E-handel", desc: "E-handelswebbplatser är ett kraftfullt verktyg för att engagera befintliga kunder och locka nya." }
+            }
+        },
+        portfolio_page: {
+            tagline: "Vårt Arbete",
+            title: "Utvalda Projekt.",
+            description: "En utställning av vårt banbrytande arbete inom artificiell intelligens, robotik och uppslukande digitala upplevelser.",
+            view_case_study: "Besök Webbplats",
+            projects: {
+                p4dots: { title: "4dots", category: "Anpassning och Utskrift", desc: "En omfattande anpassnings- och utskriftstjänst som erbjuder personliga brevhuvuden och broschyrer." },
+                kontrast: { title: "Kontrast", category: "Restaurang och Gästfrihet", desc: "En premium nordindisk matupplevelse i Malmö, Sverige, med autentisk punjabisk mat." },
+                secondskin_b2b: { title: "SecondskinStyle B2B", category: "E-handel och Sportkläder", desc: "Prestationsdrivna sportkläder konstruerade för idrottare, med tonvikt på teknisk design." },
+                secondskin: { title: "SecondskinStyle", category: "Konsument Sportkläder", desc: "Premium varumärke för sportkläder fokuserat på komfort, hållbarhet och stil." },
+                pipetechs: { title: "PipeTechs", category: "Rörledningsteknik", desc: "Avancerade system för läckagedetektering i rörledningar med hjälp av akustisk teknik." },
+                growers: { title: "Growers Direct", category: "Jordbruk och Detaljhandel", desc: "Familjedriven plantskola som erbjuder ett brett utbud av växter, keramik och expertråd." },
+                timax: { title: "Timax-NL", category: "Byggkonsulting", desc: "Holländsk konsultfirma specialiserad på byggregler och energiprestanda." },
+                sicci: { title: "Sicci", category: "Handelskammare", desc: "Singapore Indian Chamber of Commerce and Industry, stöder affärstillväxt." },
+                icai: { title: "I C A I", category: "Professionell Organisation", desc: "Singapore-kapitlet för Institute of Chartered Accountants of India." },
+                chets: { title: "Chet's Shoes", category: "E-handel och Detaljhandel", desc: "Familjeägt skoföretag som erbjuder premiumarbetsstövlar och skyddsskor." },
+                finance: { title: "Privatekonomi Sverige", category: "Finansiell Utbildning", desc: "Stärka expats och NRI i Sverige med kunskap om investeringar och skatter." }
+            }
+        },
+        careers_page: {
+            tagline: "Jobba Hos Oss",
+            title: "Bygg Framtiden.",
+            description: "Vi söker passionerade individer för att gå med i vårt team av innovatörer, ingenjörer och problemlösare.",
+            search_placeholder: "Sök roller...",
+            filters: {
+                all: "Alla",
+                full_time: "Heltid",
+                internship: "Praktik"
+            },
+            details: "Detaljer",
+            no_positions: "Inga positioner hittades som matchar dina kriterier.",
+            clear_filters: "Rensa filter"
+        },
+        jobs: jobTranslations.SV,
+        career_details: {
+            back_to_careers: "Tillbaka till Karriär",
+            apply_now: "Ansök Nu",
+            share_role: "Dela denna roll",
+            department: "Avdelning",
+            dept_name: "Teknik & AI",
+            contact_contact: "Kontakt",
+            about_role: "Om Rollen",
+            what_you_do: "Vad du kommer att göra",
+            what_looking_for: "Vad vi letar efter",
+            preferred_qual: "Föredragna kvalifikationer",
+            why_join: "Varför jobba hos oss?"
         }
     },
     DA: {
@@ -925,6 +1269,120 @@ export const translations = {
             usage_text: "Vores virksomhed er ansvarlig for indholdet af denne hjemmeside. Denne hjemmeside er designet til generelle informationsformål og udgør ikke juridisk eller medicinsk rådgivning eller dannelsen af et advokat-klient eller læge-patient forhold.",
             contact_title: "Sådan Kontakter Du Os",
             contact_text: "Hvis du har spørgsmål om denne privatlivspolitik, praksisserne på denne side eller din omgang med denne hjemmeside, bedes du besøge vores kontaktside."
+        },
+        contact_page: {
+            tagline: "Kontakt Os",
+            title: "Hvordan kan vi hjælpe?",
+            blurb: "Vi er altid her for at hjælpe dig med eventuelle spørgsmål eller problemer, du måtte have. Tøv ikke med at kontakte os.",
+            locations: {
+                sweden: "Sverige",
+                spain: "Spanien",
+                latvia: "Letland"
+            },
+            form: {
+                title: "Skriv til os..",
+                subtitle: "Vi vender tilbage til dig så hurtigt som muligt",
+                name: "Navn",
+                email: "E-mail",
+                phone: "Telefon",
+                message: "Besked",
+                btn_submit: "Send Besked",
+                btn_sending: "Sender...",
+                success_title: "Besked Sendt!",
+                success_msg: "Vi vender tilbage til dig snarest.",
+                btn_another: "Send En Anden Besked"
+            },
+            social_title: "Følg os"
+        },
+        services_page: {
+            tagline: "Hvad Vi Gør",
+            title_1: "Løser",
+            title_2: "Virkelige",
+            title_3: "Forretningsproblemer",
+            title_4: "Med",
+            title_5: "AI-baseret",
+            title_6: "Rådgivning.",
+            description: "Vores team af erfarne AI-konsulenter vil arbejde tæt sammen med dig for at identificere de rette kunstig intelligens-teknologier, værktøjer og strategier.",
+            contact_btn: "Kontakt Os",
+            services_header: "Tjenester",
+            services_desc: "Vi kan hjælpe organisationer af alle størrelser og brancher med at designe, bygge og implementere topmoderne machine learning-løsninger.",
+            core: {
+                vision: {
+                    title: "Computer Vision",
+                    desc: "Vores kernekompetence ligger i at skabe skræddersyede softwareløsninger, der udnytter kraften i computer vision-teknikker til at udlede værdifuld indsigt.",
+                    detail: "Gennem en fusion af banebrydende deep learning-algoritmer og traditionelle computer vision-tilgange giver vi virksomheder mulighed for nemt at opdage, segmentere og spore objekter."
+                },
+                nlp: {
+                    title: "Naturlig Sprogbehandling",
+                    desc: "Udnyt potentialet i deep learning til at bruge kraften i pipelines for behandling af naturligt sprog og få værdifuld mening fra ustruktureret tekst."
+                },
+                genai: {
+                    title: "Generativ AI",
+                    desc: "Udvikl banebrydende, højtydende løsninger tilpasset dine unikke krav. Frigør det fulde potentiale i din virksomhed ved at omfavne topmoderne løsninger.",
+                    detail: "Uanset om det handler om at skræddersy naturlig sprogbehandling eller udnytte mulighederne inden for computer vision."
+                }
+            },
+            general: {
+                tech: { title: "Teknologi & Software", desc: "Vores innovative løsninger har hjulpet teknologivirksomheder med at genoverveje måden, de arbejder på." },
+                sports: { title: "Sportsteknologi", desc: "Vi bringer topmoderne teknologier til sport med tracking, aktivitetsgenkendelse, pose estimation og mere." },
+                auto: { title: "Bilindustrien", desc: "Med løsninger der spænder fra objektsporing med flere kameraer til adfærdsidentifikation og procesoptimering." },
+                manu: { title: "Fremstilling/Agro", desc: "Vi har implementeret løsninger, der spænder fra computer vision-værktøjer til fødevareproducenter til realtids-sensoranalyse." },
+                marketing: { title: "Marketing", desc: "Uanset om det er på efterspørgsels- eller udbudssiden, hjælper vi virksomheder med at få mest muligt ud af data." },
+                health: { title: "Sundhed & Pharma", desc: "Vi bygger løsninger for at gøre lægemidler sikrere og mere effektive gennem machine learning-baserede tilgange." },
+                gaming: { title: "Gaming", desc: "At finde en måde at engagere spillere i dette høje tempo, konkurrenceprægede miljø er en stor udfordring." },
+                workforce: { title: "AI-arbejdsstyrke", desc: "Styrk dit team til at integrere AI sømløst i deres daglige arbejdsgange ved at tilbyde skræddersyet træning." },
+                transformation: { title: "Forretningstransformation", desc: "Vi specialiserer os i digital forretningstransformation og giver virksomheder mulighed for at udnytte kraften i teknologi." },
+                web: { title: "Webapplikationsdesign", desc: "Webapplikationer er essentielle værktøjer for moderne virksomheder og tilbyder dynamiske og interaktiva oplevelser." },
+                mobile: { title: "Mobiludvikling", desc: "Mobilapplikationer er en fremragende måde at nå et publikum, der allerede kender dit brand." },
+                ecom: { title: "E-Commerce", desc: "E-commerce hjemmesider er et kraftfuldt værktøj til at engagere eksisterende kunder og tiltrække nye." }
+            }
+        },
+        portfolio_page: {
+            tagline: "Vores Arbejde",
+            title: "Udvalgte Projekter.",
+            description: "Et udstillingsvindue for vores banebrydende arbejde inden for kunstig intelligens, robotteknologi og fordybende digitale oplevelser.",
+            view_case_study: "Besøg Side",
+            projects: {
+                p4dots: { title: "4dots", category: "Tilpasning og Print", desc: "En omfattende tilpasnings- og printtjeneste, der tilbyder personlige brevpapirer og brochurer." },
+                kontrast: { title: "Kontrast", category: "Restaurant og Gæstfrihed", desc: "En premium nordindisk spiseoplevelse i Malmø, Sverige, der byder på autentisk indisk mad." },
+                secondskin_b2b: { title: "SecondskinStyle B2B", category: "E-Commerce og Sportstøj", desc: "Præstationsdrevet sportstøj udviklet til atleter, med vægt på teknisk design." },
+                secondskin: { title: "SecondskinStyle", category: "Forbruger Sportstøj", desc: "Premium sportstøjsmærke fokuseret på komfort, holdbarhed og stil." },
+                pipetechs: { title: "PipeTechs", category: "Rørledningsteknologi", desc: "Avancerede systemer til lækagedetektion i rørledninger ved hjælp af akustisk teknologi." },
+                growers: { title: "Growers Direct", category: "Landbrug og Detailhandel", desc: "Familiedrevet planteskole, der tilbyder et bredt udvalg af planter, keramik og ekspertrådgivning." },
+                timax: { title: "Timax-NL", category: "Byggerådgivning", desc: "Hollandsk rådgivningsvirksomhed med speciale i byggereglementer og energimærkning." },
+                sicci: { title: "Sicci", category: "Handelskammer", desc: "Singapore Indian Chamber of Commerce and Industry, der støtter forretningsvækst." },
+                icai: { title: "I C A I", category: "Professionel Organisation", desc: "Singapore-afdelingen af Institute of Chartered Accountants of India." },
+                chets: { title: "Chet's Shoes", category: "E-Commerce og Detailhandel", desc: "Familiejet fodtøjsvirksomhed, der tilbyder premium arbejdsstøvler og sikkerhedssko." },
+                finance: { title: "Privatøkonomi Sverige", category: "Finansiel Uddannelse", desc: "Styrkelse af expats og NRI'er i Sverige med viden om investering, skat og familiefinans." }
+            }
+        },
+        careers_page: {
+            tagline: "Job Hos Os",
+            title: "Byg Fremtiden.",
+            description: "Vi leder efter passionerede individer til at slutte sig til vores team af innovatører, ingeniører og problemløsere.",
+            search_placeholder: "Søg roller...",
+            filters: {
+                all: "Alle",
+                full_time: "Fuldtid",
+                internship: "Praktik"
+            },
+            details: "Detaljer",
+            no_positions: "Ingen stillinger fundet, der matcher dine kriterier.",
+            clear_filters: "Ryd filtre"
+        },
+        jobs: jobTranslations.DA,
+        career_details: {
+            back_to_careers: "Tilbage til Karriere",
+            apply_now: "Ansøg Nu",
+            share_role: "Del denne stilling",
+            department: "Afdeling",
+            dept_name: "Teknik & AI",
+            contact_contact: "Kontakt",
+            about_role: "Om Rollen",
+            what_you_do: "Hvad du vil lave",
+            what_looking_for: "Hvad vi leder efter",
+            preferred_qual: "Foretrukne kvalifikationer",
+            why_join: "Hvorfor slutte sig til os?"
         }
     }
 };

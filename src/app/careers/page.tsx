@@ -6,21 +6,32 @@ import { Calendar, MapPin, Clock, ArrowRight, Share2, Mail, Facebook, Twitter, L
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/context/LanguageContext';
-import { JOBS } from '@/data/jobs';
+import { translations } from '@/utils/translations';
 import Link from 'next/link';
 
 export default function Careers() {
-    const { t } = useLanguage();
+    const { t, language } = useLanguage();
     const [activeShareId, setActiveShareId] = React.useState<number | null>(null);
     const [searchTerm, setSearchTerm] = React.useState("");
-    const [filterType, setFilterType] = React.useState("All");
 
-    const filteredJobs = JOBS.filter(job => {
+    // Get jobs based on current language
+    const currentJobs = translations[language]?.jobs || [];
+
+    const FILTER_OPTIONS = [
+        { key: "All", label: t('careers_page.filters.all') },
+        { key: "Full-time", label: t('careers_page.filters.full_time') },
+        { key: "Internship", label: t('careers_page.filters.internship') }
+    ];
+
+    const [activeFilterKey, setActiveFilterKey] = React.useState("All");
+
+    const activeFilteredJobs = currentJobs.filter(job => {
         const matchesSearch = job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
             job.description.toLowerCase().includes(searchTerm.toLowerCase());
-        const matchesType = filterType === "All" || job.type === filterType;
+        const matchesType = activeFilterKey === "All" || job.type === activeFilterKey;
         return matchesSearch && matchesType;
     });
+
 
     return (
         <main className="min-h-screen bg-background text-foreground selection:bg-accent selection:text-background" >
@@ -34,13 +45,13 @@ export default function Careers() {
                     className="mb-12"
                 >
                     <span className="text-xs font-bold tracking-[0.3em] uppercase text-accent mb-6 block">
-                        {t('careers.tagline')}
+                        {t('careers_page.tagline')}
                     </span>
                     <h1 className="text-5xl md:text-8xl font-bold tracking-tighter leading-none mb-8">
-                        {t('careers.title').split(" ")[0]} <br /> <span className="accent-gradient italic">{t('careers.title').split(" ").slice(1).join(" ")}</span>
+                        {t('careers_page.title').split(" ")[0]} <br /> <span className="accent-gradient italic">{t('careers_page.title').split(" ").slice(1).join(" ")}</span>
                     </h1>
                     <p className="text-xl text-slate-500 dark:text-slate-400 font-light max-w-2xl mb-12">
-                        {t('careers.description')}
+                        {t('careers_page.description')}
                     </p>
 
                     {/* Search and Filter Section */}
@@ -49,23 +60,23 @@ export default function Careers() {
                             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
                             <input
                                 type="text"
-                                placeholder="Search roles..."
+                                placeholder={t('careers_page.search_placeholder')}
                                 value={searchTerm}
                                 onChange={(e) => setSearchTerm(e.target.value)}
                                 className="w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-full py-4 pl-12 pr-6 text-foreground dark:text-white placeholder:text-slate-500 focus:outline-none focus:border-accent transition-colors"
                             />
                         </div>
                         <div className="flex gap-3 overflow-x-auto pb-2 md:pb-0">
-                            {["All", "Full-time", "Internship"].map((type) => (
+                            {FILTER_OPTIONS.map((option) => (
                                 <button
-                                    key={type}
-                                    onClick={() => setFilterType(type)}
-                                    className={`px-6 py-3 rounded-full text-sm font-bold whitespace-nowrap border transition-all ${filterType === type
+                                    key={option.key}
+                                    onClick={() => setActiveFilterKey(option.key)}
+                                    className={`px-6 py-3 rounded-full text-sm font-bold whitespace-nowrap border transition-all ${activeFilterKey === option.key
                                         ? "bg-accent border-accent text-white"
                                         : "bg-transparent border-white/10 text-slate-400 hover:text-white hover:border-white/30"
                                         }`}
                                 >
-                                    {type}
+                                    {option.label}
                                 </button>
                             ))}
                         </div>
@@ -73,8 +84,8 @@ export default function Careers() {
                 </motion.div>
 
                 <div className="grid grid-cols-1 gap-6">
-                    {filteredJobs.length > 0 ? (
-                        filteredJobs.map((job, index) => (
+                    {activeFilteredJobs.length > 0 ? (
+                        activeFilteredJobs.map((job, index) => (
                             <motion.div
                                 key={index}
                                 initial={{ opacity: 0, y: 20 }}
@@ -134,7 +145,7 @@ export default function Careers() {
                                             )}
                                         </div>
                                         <Link href={`/careers/${job.slug}`} className="px-6 py-3 bg-accent text-white rounded-full text-sm font-bold uppercase tracking-wider hover:bg-accent/80 transition-all flex items-center gap-2">
-                                            {t('careers.details')} <ArrowRight className="w-4 h-4" />
+                                            {t('careers_page.details')} <ArrowRight className="w-4 h-4" />
                                         </Link>
                                     </div>
                                 </div>
@@ -146,12 +157,12 @@ export default function Careers() {
                         ))
                     ) : (
                         <div className="text-center py-20 text-slate-500">
-                            <p className="text-xl">No positions found matching your criteria.</p>
+                            <p className="text-xl">{t('careers_page.no_positions')}</p>
                             <button
-                                onClick={() => { setSearchTerm(""); setFilterType("All"); }}
+                                onClick={() => { setSearchTerm(""); setActiveFilterKey("All"); }}
                                 className="mt-4 text-accent hover:underline"
                             >
-                                Clear filters
+                                {t('careers_page.clear_filters')}
                             </button>
                         </div>
                     )}

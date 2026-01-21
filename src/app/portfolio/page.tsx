@@ -9,89 +9,88 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/context/LanguageContext';
 
-// Dummy portfolio data using generated artifacts
-const PROJECTS = [
-    {
-        title: "4dots",
-        category: "Custom Customization & Printing",
-        image: "/images/portfolio/4dotss.jpg",
-        description: "A comprehensive customization and printing service offering personalized letterheads, booklets, and canvas prints.",
-        link: "https://4dots.in"
-    },
-    {
-        title: "Kontrast",
-        category: "Restaurant & Hospitality",
-        image: "/images/portfolio/kontrast.jpg",
-        description: "A premium Northern Indian dining experience in Malmö, Sweden, featuring authentic Punjabi cuisine.",
-        link: "https://www.kontrastrestaurang.se/"
-    },
-    {
-        title: "SecondskinStyle B2B",
-        category: "E-Commerce & Sportswear",
-        image: "/images/portfolio/secondskin.jpg",
-        description: "Performance-driven sportswear engineered for athletes, emphasizing technical design and sustainable manufacturing.",
-        link: "https://business.secondskinstyle.com/"
-    },
-    {
-        title: "SecondskinStyle",
-        category: "Consumer Sportswear",
-        image: "/images/portfolio/secondskinstyle.jpg",
-        description: "Premium athletic apparel brand focused on comfort, durability, and style for the modern athlete.",
-        link: "https://secondskinstyle.com/"
-    },
-    {
-        title: "PipeTechs",
-        category: "Pipeline Technology",
-        image: "/images/portfolio/pipelines.jpg",
-        description: "Advanced pipeline leak detection systems using acoustic technology for liquid, gas, and sub-sea applications.",
-        link: "https://www.pipetechs.com/"
-    },
-    {
-        title: "Growers Direct",
-        category: "Agriculture & Retail",
-        image: "/images/portfolio/growerdirect.jpg",
-        description: "Family-run nursery offering a wide range of plants, pottery, and expert gardening advice.",
-        link: "https://www.growersdirect.co.nz/"
-    },
-    {
-        title: "Timax-NL",
-        category: "Construction Consulting",
-        image: "/images/portfolio/timax.jpg",
-        description: "Dutch consulting firm specializing in building regulations, energy performance, and sustainable construction.",
-        link: "https://www.timax.nl/"
-    },
-    {
-        title: "Sicci",
-        category: "Chamber of Commerce",
-        image: "/images/portfolio/sicci.jpg",
-        description: "Singapore Indian Chamber of Commerce and Industry, supporting business growth and advocacy since 1924.",
-        link: "https://sicci.com/"
-    },
-    {
-        title: "I C A I",
-        category: "Professional Organization",
-        image: "/images/portfolio/icai.jpg",
-        description: "Singapore Chapter of the Institute of Chartered Accountants of India, fostering professional development.",
-        link: "https://icai.org.sg/"
-    },
-    {
-        title: "Chet's Shoes",
-        category: "E-Commerce & Retail",
-        image: "/images/portfolio/boots.jpg",
-        description: "Family-owned footwear business offering premium work boots, safety shoes, and personalized service since 1947.",
-        link: "https://chetsshoes.com/"
-    },
-    {
-        title: "Personal Finance Sweden",
-        category: "Financial Education",
-        image: "/images/portfolio/personalfinance.jpg",
-        description: "Empowering expats and NRIs in Sweden with knowledge on investing, taxes, and family finance.",
-        link: "https://www.personalfinancesweden.com/"
-    }
-];
-
 export default function Portfolio() {
     const { t } = useLanguage();
+
+    const PROJECTS = [
+        {
+            title: t('portfolio_page.projects.p4dots.title'),
+            category: t('portfolio_page.projects.p4dots.category'),
+            image: "/images/portfolio/4dotss.jpg",
+            description: t('portfolio_page.projects.p4dots.desc'),
+            link: "https://4dots.in"
+        },
+        {
+            title: t('portfolio_page.projects.kontrast.title'),
+            category: t('portfolio_page.projects.kontrast.category'),
+            image: "/images/portfolio/kontrast.jpg",
+            description: t('portfolio_page.projects.kontrast.desc'),
+            link: "https://www.kontrastrestaurang.se/"
+        },
+        {
+            title: t('portfolio_page.projects.secondskin_b2b.title'),
+            category: t('portfolio_page.projects.secondskin_b2b.category'),
+            image: "/images/portfolio/secondskin.jpg",
+            description: t('portfolio_page.projects.secondskin_b2b.desc'),
+            link: "https://business.secondskinstyle.com/"
+        },
+        {
+            title: t('portfolio_page.projects.secondskin.title'),
+            category: t('portfolio_page.projects.secondskin.category'),
+            image: "/images/portfolio/secondskinstyle.jpg",
+            description: t('portfolio_page.projects.secondskin.desc'),
+            link: "https://secondskinstyle.com/"
+        },
+        {
+            title: t('portfolio_page.projects.pipetechs.title'),
+            category: t('portfolio_page.projects.pipetechs.category'),
+            image: "/images/portfolio/pipelines.jpg",
+            description: t('portfolio_page.projects.pipetechs.desc'),
+            link: "https://www.pipetechs.com/"
+        },
+        {
+            title: t('portfolio_page.projects.growers.title'),
+            category: t('portfolio_page.projects.growers.category'),
+            image: "/images/portfolio/growerdirect.jpg",
+            description: t('portfolio_page.projects.growers.desc'),
+            link: "https://www.growersdirect.co.nz/"
+        },
+        {
+            title: t('portfolio_page.projects.timax.title'),
+            category: t('portfolio_page.projects.timax.category'),
+            image: "/images/portfolio/timax.jpg",
+            description: t('portfolio_page.projects.timax.desc'),
+            link: "https://www.timax.nl/"
+        },
+        {
+            title: t('portfolio_page.projects.sicci.title'),
+            category: t('portfolio_page.projects.sicci.category'),
+            image: "/images/portfolio/sicci.jpg",
+            description: t('portfolio_page.projects.sicci.desc'),
+            link: "https://sicci.com/"
+        },
+        {
+            title: t('portfolio_page.projects.icai.title'),
+            category: t('portfolio_page.projects.icai.category'),
+            image: "/images/portfolio/icai.jpg",
+            description: t('portfolio_page.projects.icai.desc'),
+            link: "https://icai.org.sg/"
+        },
+        {
+            title: t('portfolio_page.projects.chets.title'),
+            category: t('portfolio_page.projects.chets.category'),
+            image: "/images/portfolio/boots.jpg",
+            description: t('portfolio_page.projects.chets.desc'),
+            link: "https://chetsshoes.com/"
+        },
+        {
+            title: t('portfolio_page.projects.finance.title'),
+            category: t('portfolio_page.projects.finance.category'),
+            image: "/images/portfolio/personalfinance.jpg",
+            description: t('portfolio_page.projects.finance.desc'),
+            link: "https://www.personalfinancesweden.com/"
+        }
+    ];
 
     return (
         <main className="min-h-screen bg-background text-foreground selection:bg-accent selection:text-background">
@@ -105,13 +104,13 @@ export default function Portfolio() {
                     className="mb-20"
                 >
                     <span className="text-xs font-bold tracking-[0.3em] uppercase text-accent mb-6 block">
-                        {t('portfolio.tagline')}
+                        {t('portfolio_page.tagline')}
                     </span>
                     <h1 className="text-5xl md:text-8xl font-bold tracking-tighter leading-none mb-8">
-                        {t('portfolio.title').split(" ")[0]} <br /> <span className="accent-gradient italic">{t('portfolio.title').split(" ").slice(1).join(" ")}</span>
+                        {t('portfolio_page.title').split(" ")[0]} <br /> <span className="accent-gradient italic">{t('portfolio_page.title').split(" ").slice(1).join(" ")}</span>
                     </h1>
                     <p className="text-xl text-slate-400 font-light max-w-2xl">
-                        {t('portfolio.description')}
+                        {t('portfolio_page.description')}
                     </p>
                 </motion.div>
 
@@ -142,7 +141,7 @@ export default function Portfolio() {
                                         target="_blank"
                                         className="px-6 py-3 border border-white rounded-full text-sm font-bold tracking-widest uppercase hover:bg-white hover:text-black transition-colors cursor-pointer"
                                     >
-                                        {t('portfolio.view_case_study')}
+                                        {t('portfolio_page.view_case_study')}
                                     </Link>
                                 </div>
                             </div>
