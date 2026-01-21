@@ -8,23 +8,27 @@ export default function CustomCursor() {
     const [trail, setTrail] = useState<Array<{ x: number; y: number; id: number }>>([]);
 
     useEffect(() => {
+        // Don't run on mobile/touch devices
+        if (window.matchMedia("(pointer: coarse)").matches) return;
+
         let trailId = 0;
 
         const updatePosition = (e: MouseEvent) => {
-            setPosition({ x: e.clientX, y: e.clientY });
+            requestAnimationFrame(() => {
+                setPosition({ x: e.clientX, y: e.clientY });
 
-            // Add trail point
-            setTrail(prev => {
-                const newTrail = [...prev, { x: e.clientX, y: e.clientY, id: trailId++ }];
-                return newTrail.slice(-8); // Keep last 8 points
+                setTrail(prev => {
+                    const newTrail = [...prev, { x: e.clientX, y: e.clientY, id: trailId++ }];
+                    return newTrail.slice(-8);
+                });
+
+                const target = e.target as HTMLElement;
+                setIsPointer(
+                    window.getComputedStyle(target).cursor === 'pointer' ||
+                    target.tagName === 'A' ||
+                    target.tagName === 'BUTTON'
+                );
             });
-
-            const target = e.target as HTMLElement;
-            setIsPointer(
-                window.getComputedStyle(target).cursor === 'pointer' ||
-                target.tagName === 'A' ||
-                target.tagName === 'BUTTON'
-            );
         };
 
         window.addEventListener('mousemove', updatePosition);

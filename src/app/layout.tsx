@@ -6,6 +6,7 @@ import CustomCursor from "@/components/CustomCursor";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Preloader from "@/components/Preloader";
+import SmoothScroll from "@/components/SmoothScroll";
 
 export const metadata: Metadata = {
   title: "ASIMOVX | Premium AI Tech Consulting",
@@ -33,6 +34,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Preloader />
+
         <LanguageProvider>
           <ThemeProvider
             attribute="class"
@@ -40,10 +42,12 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <div className="noise-overlay" />
-            <CustomCursor />
-            <WhatsAppButton />
-            {children}
+            <SmoothScroll>
+              <div className="noise-overlay" />
+              <CustomCursor />
+              <WhatsAppButton />
+              {children}
+            </SmoothScroll>
           </ThemeProvider>
         </LanguageProvider>
       </body>

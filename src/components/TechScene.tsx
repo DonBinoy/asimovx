@@ -2,7 +2,7 @@
 
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Torus, Box, OrbitControls } from '@react-three/drei';
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import * as THREE from 'three';
 
 const RotatingTorus = () => {
@@ -67,6 +67,19 @@ const FloatingBoxes = () => {
 };
 
 const TechScene = () => {
+    const [isMobile, setIsMobile] = React.useState(true);
+
+    React.useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    if (isMobile) return null;
+
     return (
         <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 1 }}>
             <Canvas camera={{ position: [0, 0, 5], fov: 50 }} style={{ opacity: 0.4, pointerEvents: 'none' }}>
