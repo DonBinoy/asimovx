@@ -6,6 +6,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Mail, MapPin, Phone, Send, Loader2, Linkedin, CheckCircle } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+import { COUNTRY_CODES } from '@/constants/phoneCodes';
 
 export default function Contact() {
     const { t } = useLanguage();
@@ -34,6 +35,7 @@ export default function Contact() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
+        countryCode: '+46',
         phone: '',
         message: ''
     });
@@ -43,12 +45,34 @@ export default function Contact() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        console.log("Form Submitted", formData);
-        setIsSubmitting(false);
-        setIsSuccess(true);
-        setFormData({ name: '', email: '', phone: '', message: '' });
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    ...formData,
+                    phone: `${formData.countryCode} ${formData.phone}`
+                }),
+            });
+
+            if (response.ok) {
+                console.log("Form Submitted Successfully");
+                setIsSuccess(true);
+                setFormData({ name: '', email: '', countryCode: '+46', phone: '', message: '' });
+            } else {
+                console.error("Failed to submit form");
+                // Optional: Handle error state here
+                alert("Failed to send message. Please try again later.");
+            }
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            alert("An error occurred. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -176,13 +200,26 @@ export default function Contact() {
                                         <label className="block text-sm font-medium text-slate-300 mb-2">
                                             {t('contact_page.form.phone')}
                                         </label>
-                                        <input
-                                            type="tel"
-                                            value={formData.phone}
-                                            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                                            className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors placeholder:text-slate-600"
-                                            placeholder={t('contact_page.form.phone')}
-                                        />
+                                        <div className="flex gap-2">
+                                            <select
+                                                value={formData.countryCode}
+                                                onChange={(e) => setFormData({ ...formData, countryCode: e.target.value })}
+                                                className="bg-black/50 border border-white/10 rounded-xl px-2 py-3 text-white focus:outline-none focus:border-accent transition-colors appearance-none min-w-[80px]"
+                                            >
+                                                {COUNTRY_CODES.map(c => (
+                                                    <option key={c.code} value={c.code} className="bg-[#111] text-white">
+                                                        {c.flag} {c.code}
+                                                    </option>
+                                                ))}
+                                            </select>
+                                            <input
+                                                type="tel"
+                                                value={formData.phone}
+                                                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                                className="w-full bg-black/50 border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors placeholder:text-slate-600"
+                                                placeholder={t('contact_page.form.phone')}
+                                            />
+                                        </div>
                                     </div>
 
                                     <div>

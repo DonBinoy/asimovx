@@ -25,6 +25,7 @@ import {
     Menu
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import BookDemoModal from "@/components/BookDemoModal";
 
 // --- Components ---
 
@@ -490,6 +491,7 @@ function DashboardPreview() {
 
 export default function HousingAssociationProductPage() {
     const { t } = useLanguage();
+    const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
 
     return (
         <div className="bg-[#F9F8F6] text-[#111] font-sans selection:bg-[#EBE5D5] selection:text-[#111]">
@@ -581,15 +583,17 @@ export default function HousingAssociationProductPage() {
                         {t('housing_association.cta.title_1')} <br /> <span className="italic">{t('housing_association.cta.title_2')}</span>
                     </h2>
                     <div className="flex flex-col md:flex-row gap-6 justify-center">
-                        <button className="px-12 py-6 bg-[#111] text-white rounded-full text-xl font-bold tracking-wide hover:scale-105 transition-transform">
+                        <button
+                            onClick={() => setIsDemoModalOpen(true)}
+                            className="px-12 py-6 bg-[#111] text-white rounded-full text-xl font-bold tracking-wide hover:scale-105 transition-transform"
+                        >
                             {t('housing_association.cta.book_demo')}
-                        </button>
-                        <button className="px-12 py-6 bg-white border border-slate-200 text-[#111] rounded-full text-xl font-bold tracking-wide hover:bg-slate-50 transition-colors">
-                            {t('housing_association.cta.view_pricing')}
                         </button>
                     </div>
                 </div>
             </section>
+
+            <BookDemoModal isOpen={isDemoModalOpen} onClose={() => setIsDemoModalOpen(false)} />
 
         </div>
     );

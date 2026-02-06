@@ -12,6 +12,17 @@ export const translations = {
             contact: "Contact Us",
             products: "Products"
         },
+        about: {
+            hero_title_1: "About",
+            hero_title_2: "Us",
+            hero_description: "We are pioneers in AI consulting, dedicated to transforming the way businesses operate through intelligent, scalable, and future-proof solutions.",
+            who_we_are_title: "Who We Are",
+            who_we_are_desc: "We are a team of passionate engineers, researchers, and strategists working together to bridge the gap between complex AI technologies and real-world business needs.",
+            point_1: "Industry Leaders in AI",
+            point_2: "Custom Solutions",
+            point_3: "Strategic Consulting",
+            point_4: "Global Presence"
+        },
         hero: {
             tagline: "Tech Consulting Reimagined",
             title_1: "Supercharge",
@@ -682,6 +693,17 @@ export const translations = {
             contact: "Contáctenos",
             products: "Productos"
         },
+        about: {
+            hero_title_1: "Sobre",
+            hero_title_2: "Nosotros",
+            hero_description: "Somos pioneros en consultoría de IA, dedicados a transformar la forma en que operan las empresas a través de soluciones inteligentes, escalables y preparadas para el futuro.",
+            who_we_are_title: "Quiénes Somos",
+            who_we_are_desc: "Somos un equipo de ingenieros, investigadores y estrategas apasionados que trabajan juntos para cerrar la brecha entre las tecnologías complejas de IA y las necesidades empresariales del mundo real.",
+            point_1: "Líderes de la industria en IA",
+            point_2: "Soluciones personalizadas",
+            point_3: "Consultoría estratégica",
+            point_4: "Presencia global"
+        },
         hero: {
             tagline: "Consultoría Tecnológica Reinventada",
             title_1: "Potencie",
@@ -1351,6 +1373,17 @@ export const translations = {
             contact: "Kontakta Oss",
             products: "Produkter"
         },
+        about: {
+            hero_title_1: "Om",
+            hero_title_2: "Oss",
+            hero_description: "Vi är pionjärer inom AI-konsultation, dedikerade till att förändra hur företag arbetar genom intelligenta, skalbara och framtidssäkra lösningar.",
+            who_we_are_title: "Vilka Vi Är",
+            who_we_are_desc: "Vi är ett team av passionerade ingenjörer, forskare och strateger som arbetar tillsammans för att överbrygga klyftan mellan komplexa AI-teknologier och verkliga affärsbehov.",
+            point_1: "Branschledare inom AI",
+            point_2: "Skräddarsydda lösningar",
+            point_3: "Strategisk rådgivning",
+            point_4: "Global närvaro"
+        },
         hero: {
             tagline: "Teknisk Konsulting På Nytt Sätt",
             title_1: "Superladda",
@@ -2019,6 +2052,17 @@ export const translations = {
             blog: "Blog",
             contact: "Kontakt Os",
             products: "Produkter"
+        },
+        about: {
+            hero_title_1: "Om",
+            hero_title_2: "Os",
+            hero_description: "Vi er pionerer inden for AI-rådgivning, dedikeret til at transformere måden, virksomheder opererer på, gennem intelligente, skalerbare og fremtidssikrede løsninger.",
+            who_we_are_title: "Hvem Vi Er",
+            who_we_are_desc: "Vi er et team af passionerede ingeniører, forskere og strateger, der arbejder sammen for at bygge bro mellem komplekse AI-teknologier og virkelige forretningsbehov.",
+            point_1: "Brancheledere inden for AI",
+            point_2: "Skræddersyede løsninger",
+            point_3: "Strategisk rådgivning",
+            point_4: "Global tilstedeværelse"
         },
         hero: {
             tagline: "Teknisk Rådgivning Gentänkt",
